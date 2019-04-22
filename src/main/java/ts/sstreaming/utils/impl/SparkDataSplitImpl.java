@@ -1,0 +1,70 @@
+package ts.sstreaming.utils.impl;
+
+import org.apache.spark.api.java.JavaRDD;
+import org.apache.spark.api.java.function.Function;
+import org.apache.spark.sql.*;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema;
+import org.apache.spark.sql.types.StructType;
+import scala.Tuple2;
+import ts.sstreaming.utils.inter.DataSplitInter;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.apache.spark.sql.types.DataTypes.LongType;
+
+public class SparkDataSplitImpl implements DataSplitInter, Serializable {
+
+    private SparkSession sparkSession = null;
+
+    public SparkDataSplitImpl(SparkSession session) {
+        this.sparkSession = session;
+    }
+
+    @Override
+    public Dataset<Row>[] splitDataByCount(Dataset<Row> ds, int count) {
+        long row_count = ds.count();
+        int data_split_loop_count = (int)row_count/count;
+        int last_ds = row_count%count==0?0:1;
+        Dataset<Row>[] result = new Dataset[data_split_loop_count+last_ds];
+        ds.schema();
+        ds.printSchema();
+        //添加id_number列
+        StructType ds_scheme = ds.schema().add("id_number",LongType);
+        JavaRDD<Row> rdd_ds = ds.toJavaRDD().zipWithIndex().map(new Function<Tuple2<Row, Long>, Row>() {
+            @Override
+            public Row call(Tuple2<Row, Long> rowLongTuple2) throws Exception {
+                List<Object> list = new ArrayList<>();
+                List type_list = scala.collection.JavaConversions.seqAsJavaList(rowLongTuple2._1.toSeq());
+                for(int i=0;i<type_list.size();i++){
+                    list.add(type_list.get(i));
+                }
+                list.add(RowFactory.create(rowLongTuple2._2).toSeq().last());
+
+                return new GenericRowWithSchema(list.toArray(),ds_scheme);
+
+            }
+        });
+        Dataset<Row> result_ds = sparkSession.createDataFrame(rdd_ds,ds_scheme);
+        result_ds.registerTempTable("split_table");
+
+        int startIndex = 0;
+        int addLoop = 0;
+        for (int i = 0; i <=data_split_loop_count; i++) {
+            result[i] = (sparkSession.sql("select * from split_table where id_number>="
+                    +(startIndex+addLoop*count)
+                    +" and id_number<"+(startIndex+(addLoop+1)*count)
+                    ).drop("id_number")
+            );
+            addLoop++;
+        }
+        return result;
+    }
+
+    @Override
+    public Dataset<Row>[] splitDataByTimeWindows(Dataset<Row> ds, Long time_interval) {
+        return null;
+    }
+}
