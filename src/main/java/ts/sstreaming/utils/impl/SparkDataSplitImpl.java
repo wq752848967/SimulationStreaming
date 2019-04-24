@@ -11,7 +11,9 @@ import ts.sstreaming.utils.inter.DataSplitInter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 import static org.apache.spark.sql.types.DataTypes.LongType;
 
@@ -24,7 +26,7 @@ public class SparkDataSplitImpl implements DataSplitInter, Serializable {
     }
 
     @Override
-    public Dataset<Row>[] splitDataByCount(Dataset<Row> ds, int count) {
+    public Dataset<Row>[] splitDataByRecordCount(Dataset<Row> ds, int count) {
         long row_count = ds.count();
         int data_split_loop_count = (int)row_count/count;
         int last_ds = row_count%count==0?0:1;
@@ -64,7 +66,45 @@ public class SparkDataSplitImpl implements DataSplitInter, Serializable {
     }
 
     @Override
-    public Dataset<Row>[] splitDataByTimeWindows(Dataset<Row> ds, Long time_interval) {
-        return null;
+    public Dataset<Row>[] splitDataByBatch(Dataset<Row> ds, int batchCount) {
+
+        double[] rating = new double[batchCount];
+        Arrays.fill(rating,1.0/batchCount);
+        Dataset<Row>[] result = ds.randomSplit(rating);
+        return result;
+
+    }
+
+    @Override
+    public Dataset<Row>[] splitDataByTimeWindows(Dataset<Row> ds,String time_col_name, Long windows_interval) {
+        List<Dataset<Row>> reuslt_list = new ArrayList<>();
+        String[] cols_arr = ds.columns();
+        boolean flag = false;
+        for(String item:cols_arr){
+            if(item.equals(time_col_name)){
+                flag = true;
+            }
+        }
+        if(!flag){
+            return null;
+        }
+
+
+        //main alg
+        ds.registerTempTable("time_data");
+        long start_time = Long.parseLong(sparkSession.sql("select min("+time_col_name+") from time_data").first().get(0)+"");
+        long end_time = Long.parseLong(sparkSession.sql("select max("+time_col_name+") from time_data").first().get(0)+"");
+        long index_time = start_time;
+        while(index_time!=end_time){
+            Dataset<Row> temp_ds = sparkSession.sql("select * from time_data where "
+                    +time_col_name+">="+index_time
+                    +" and "+time_col_name+"<="+(index_time+windows_interval)+"");
+            if(temp_ds.count()!=0){
+                reuslt_list.add(temp_ds);
+            }
+            index_time+=windows_interval;
+        }
+        Dataset<Row>[] result = new Dataset[reuslt_list.size()];
+        return reuslt_list.toArray(result);
     }
 }

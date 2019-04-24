@@ -38,7 +38,8 @@ public class SparkDataSplitUT extends TestCase {
     }
     @Test
     public void testRun(){
-        Dataset<Row>[] result = testObj.splitDataByCount(input,3);
+        //Dataset<Row>[] result = testObj.splitDataByRecordCount(input,3);
+        Dataset<Row>[] result = testObj.splitDataByTimeWindows(input,"time",5000L);
         for ( Dataset<Row> item :result) {
             item.show();
         }
