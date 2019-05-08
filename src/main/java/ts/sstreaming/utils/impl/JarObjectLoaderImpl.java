@@ -1,5 +1,6 @@
 package ts.sstreaming.utils.impl;
 
+import org.apache.spark.sql.SparkSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ts.workflow.lib.FloKAlgorithm;
@@ -12,15 +13,14 @@ import java.net.URLClassLoader;
 
 public class JarObjectLoaderImpl implements ObjectLoaderInter {
     private static Logger LOGGER = LoggerFactory.getLogger(JarObjectLoaderImpl.class);
-    public FloKAlgorithm loadFlokAlg(String path, String className,String masterUrl){
-        FloKAlgorithm alg = (FloKAlgorithm)loadObject(path,className);
-        FloKAlgorithmArguments argum = new FloKAlgorithmArguments();
-        argum.setMasterUrl(masterUrl);
-        argum.mainclass = className;
-        alg.initAlgorithm(argum);
-        return null;
+
+    public FloKAlgorithm loadObject(String path, String className, Object context){
+        SparkSession sparkSession = (SparkSession)context;
+        FloKAlgorithm alg = (FloKAlgorithm)load(path,className);
+        alg.sparkSession = sparkSession;
+        return alg;
     }
-    public FloKAlgorithm loadObject(String path, String className){
+    public FloKAlgorithm load(String path, String className){
         String filePath = path;
         FloKAlgorithm alg = null;
         URL url;

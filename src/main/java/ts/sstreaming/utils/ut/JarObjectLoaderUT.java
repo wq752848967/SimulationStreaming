@@ -32,7 +32,7 @@ public class JarObjectLoaderUT extends TestCase {
     }
     @Test
     public void testRun(){
-        FloKAlgorithm alg = (FloKAlgorithm)testObj.loadObject(jarPath,className);
+        FloKAlgorithm alg = (FloKAlgorithm)testObj.loadObject(jarPath,"",className);
         FloKAlgorithmArguments argum = new FloKAlgorithmArguments();
         argum.mainclass = className;
         alg.initAlgorithm(argum);
