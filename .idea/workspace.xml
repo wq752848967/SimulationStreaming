@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="433ad6fb-0f3e-4a68-8090-63c11b0f93c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ToDo.list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/JarObjectLoaderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/ObjectLoaderInter.java" afterDir="false" />
+    <list default="true" id="433ad6fb-0f3e-4a68-8090-63c11b0f93c5" name="Default Changelist" comment="wq: todolist 19.05.07">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/ut/JarObjectLoaderUT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/CSVReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/CSVWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/DataTypes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKAlgorithmArguments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKDataReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKDataSet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKDataWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/ParquetReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/ParquetWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/workflow/lib/StructFieldTypes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/JarObjectLoaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/JarObjectLoaderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/ObjectLoaderInter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/ObjectLoaderInter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,40 +30,41 @@
     <session id="-350694883">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="java" value="9" />
+          <entry key="java" value="39" />
           <entry key="list" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="9" />
+          <entry key="JAVA" value="39" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="13" />
-          <entry key="java" value="3243" />
+          <entry key="dummy" value="14" />
+          <entry key="java" value="3848" />
           <entry key="list" value="341" />
-          <entry key="txt" value="31" />
+          <entry key="txt" value="48" />
           <entry key="xml" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3243" />
-          <entry key="PLAIN_TEXT" value="385" />
+          <entry key="JAVA" value="3848" />
+          <entry key="PLAIN_TEXT" value="403" />
           <entry key="XML" value="17" />
         </counts>
       </usages-collector>
@@ -60,66 +72,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-              <folding>
-                <element signature="e#92#93#0" expanded="true" />
-                <element signature="e#142#143#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/DataSplitInter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ToDo.list">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/ut/JarObjectLoaderUT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/SparkDataSplitImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1278">
-              <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+            <state relative-caret-position="418">
+              <caret line="34" column="79" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/ObjectLoaderInter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -127,25 +87,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/JarObjectLoaderImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="324">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#243#244#0" expanded="true" />
-                <element signature="e#270#271#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/ut/SparkDataSplitUT.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="41" column="80" selection-start-line="41" selection-start-column="80" selection-end-line="41" selection-end-column="80" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="140">
+              <caret line="29" column="86" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -181,15 +136,23 @@
         <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/ut/SparkDataSplitUT.java" />
         <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/SparkDataSplitImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/DataSplitInter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/ObjectLoaderInter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/JarObjectLoaderImpl.java" />
         <option value="$PROJECT_DIR$/ToDo.list" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/SClassLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/SClassLoaderInter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/ObjectLoaderInter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/lib/CSVWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/workflow/lib/CSVReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKAlgorithmArguments.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/JarObjectLoaderImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/ut/JarObjectLoaderUT.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="714" />
-    <option name="height" value="900" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -199,6 +162,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="simulationstreaming" type="58d84e3e:PackageViewProjectNode" />
+              <item name="simulationstreaming" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -207,16 +181,70 @@
               <item name="simulationstreaming" type="b2602c69:ProjectViewProjectNode" />
               <item name="simulationstreaming" type="462c0819:PsiDirectoryNode" />
             </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
             <path>
-              <item name="simulationstreaming" type="58d84e3e:PackageViewProjectNode" />
-              <item name="simulationstreaming" type="616d4139:PackageViewModuleNode" />
+              <item name="simulationstreaming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulationstreaming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simulationstreaming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulationstreaming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simulationstreaming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulationstreaming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simulationstreaming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulationstreaming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simulationstreaming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulationstreaming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ts" type="462c0819:PsiDirectoryNode" />
+              <item name="sstreaming" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simulationstreaming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulationstreaming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ts" type="462c0819:PsiDirectoryNode" />
+              <item name="sstreaming" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simulationstreaming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulationstreaming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ts" type="462c0819:PsiDirectoryNode" />
+              <item name="sstreaming" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="ut" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="simulationstreaming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="simulationstreaming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ts" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -230,6 +258,11 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="sbt.project.settings.configurable" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/ts/sstreaming/lib" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -242,7 +275,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SparkDataSplitUT">
+  <component name="RunManager" selected="JUnit.JarObjectLoaderUT.testRun">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -251,6 +284,23 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JarObjectLoaderUT.testRun" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="simulationstreaming" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ts.sstreaming.utils.ut.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ts.sstreaming.utils.ut" />
+      <option name="MAIN_CLASS_NAME" value="ts.sstreaming.utils.ut.JarObjectLoaderUT" />
+      <option name="METHOD_NAME" value="testRun" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -313,9 +363,11 @@
     <list>
       <item itemvalue="JUnit.SparkDataSplitUT" />
       <item itemvalue="JUnit.SparkDataSplitUT.testRun" />
+      <item itemvalue="JUnit.JarObjectLoaderUT.testRun" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JarObjectLoaderUT.testRun" />
         <item itemvalue="JUnit.SparkDataSplitUT" />
         <item itemvalue="JUnit.SparkDataSplitUT.testRun" />
       </list>
@@ -361,39 +413,46 @@
       <option name="project" value="LOCAL" />
       <updated>1556108147404</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="wq: todolist 19.05.07">
+      <created>1557232669414</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1557232669414</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SparkDataSplitUT - 2019.04.23 at 19h 25m 06s.xml">
-      <configuration name="SparkDataSplitUT" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SparkDataSplitUT - 2019.04.23 at 19h 25m 41s.xml">
-      <configuration name="SparkDataSplitUT" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SparkDataSplitUT - 2019.04.23 at 19h 26m 26s.xml">
-      <configuration name="SparkDataSplitUT" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SparkDataSplitUT - 2019.04.23 at 19h 53m 28s.xml">
-      <configuration name="SparkDataSplitUT" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SparkDataSplitUT - 2019.04.23 at 19h 54m 13s.xml">
-      <configuration name="SparkDataSplitUT" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SparkDataSplitUT - 2019.04.23 at 20h 05m 28s.xml">
-      <configuration name="SparkDataSplitUT" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SparkDataSplitUT - 2019.04.23 at 20h 05m 55s.xml">
-      <configuration name="SparkDataSplitUT" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SparkDataSplitUT - 2019.04.24 at 20h 10m 12s.xml">
-      <configuration name="SparkDataSplitUT" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SparkDataSplitUT - 2019.04.24 at 20h 11m 04s.xml">
       <configuration name="SparkDataSplitUT" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SparkDataSplitUT - 2019.04.24 at 20h 12m 55s.xml">
       <configuration name="SparkDataSplitUT" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JarObjectLoaderUT_testRun - 2019.05.08 at 10h 23m 29s.xml">
+      <configuration name="JarObjectLoaderUT.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JarObjectLoaderUT_testRun - 2019.05.08 at 10h 24m 50s.xml">
+      <configuration name="JarObjectLoaderUT.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JarObjectLoaderUT_testRun - 2019.05.08 at 10h 25m 02s.xml">
+      <configuration name="JarObjectLoaderUT.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JarObjectLoaderUT_testRun - 2019.05.08 at 10h 26m 46s.xml">
+      <configuration name="JarObjectLoaderUT.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JarObjectLoaderUT_testRun - 2019.05.08 at 10h 29m 28s.xml">
+      <configuration name="JarObjectLoaderUT.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JarObjectLoaderUT_testRun - 2019.05.08 at 10h 30m 22s.xml">
+      <configuration name="JarObjectLoaderUT.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JarObjectLoaderUT_testRun - 2019.05.08 at 10h 33m 03s.xml">
+      <configuration name="JarObjectLoaderUT.testRun" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="JarObjectLoaderUT_testRun - 2019.05.08 at 10h 35m 32s.xml">
+      <configuration name="JarObjectLoaderUT.testRun" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -407,8 +466,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" x="545" y="80" width="349" height="762" id="Project" order="0" visible="true" weight="0.23462088" />
+      <window_info content_ui="combo" x="545" y="80" width="349" height="762" id="Project" order="0" weight="0.23748212" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -421,7 +481,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32961586" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32961586" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32961586" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32961586" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -437,7 +497,8 @@
     <MESSAGE value="wq:push test" />
     <MESSAGE value="wq:dev add SparkDataSplitImpl" />
     <MESSAGE value="wq: add SparkDataSplitImpl" />
-    <option name="LAST_COMMIT_MESSAGE" value="wq: add SparkDataSplitImpl" />
+    <MESSAGE value="wq: todolist 19.05.07" />
+    <option name="LAST_COMMIT_MESSAGE" value="wq: todolist 19.05.07" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/spark/sql/RowUtils.java" />
@@ -473,48 +534,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/SparkDataSplitImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/ObjectLoaderInter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/ut/SparkDataSplitUT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="41" column="80" selection-start-line="41" selection-start-column="80" selection-end-line="41" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/JarObjectLoaderImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#243#244#0" expanded="true" />
-            <element signature="e#270#271#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/DataSplitInter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
+        <state relative-caret-position="612">
           <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -522,10 +544,145 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/SClassLoaderInter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ToDo.list">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="288">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/inter/ObjectLoaderInter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/StructFieldTypes.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/SparkDataSplitImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="88" column="24" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/CSVReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/CSVWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/DataTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKDataReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKDataSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKDataWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/ParquetReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/ParquetWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/ut/SparkDataSplitUT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKAlgorithmArguments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
+          <folding>
+            <element signature="e#1405#1406#0" expanded="true" />
+            <element signature="e#1455#1456#0" expanded="true" />
+            <element signature="e#1497#1498#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/JarObjectLoaderImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/workflow/lib/FloKAlgorithm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="29" column="86" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/ut/JarObjectLoaderUT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="34" column="79" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
