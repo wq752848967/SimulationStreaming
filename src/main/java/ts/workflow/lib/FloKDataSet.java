@@ -59,7 +59,7 @@ public class FloKDataSet {
     public void addModelOutputPath(String path) {
         modelOutputPath.add(path);
     }
-
+    public void clearDF(){ dfList.clear();}
 
     public String getModelInputPath(int index) {
         if(index >= modelInputPath.size()) {
