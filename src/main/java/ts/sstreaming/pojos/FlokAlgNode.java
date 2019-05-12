@@ -56,9 +56,13 @@ public class FlokAlgNode {
             flokDataset.clearDF();
             Dataset<Row> data = data_queue.poll();
             flokDataset.addDF(data);
+
             result = flokAlg.run(flokDataset,params);
+            //int count =  result.getSize();
+            //System.out.println("result:"+result.getSize());
             if(isEndingNode){
                 //尾节点数据处理
+
                 outputData();
                 result.clearDF();
             }
@@ -77,6 +81,7 @@ public class FlokAlgNode {
             for(int i=0;i<outputs.length;i++){
                 String path = outputs[i];
                 if(resultSplit.containsKey(path)){
+                    //System.out.println(count+"  "+result.getSize());
                     resultSplit.get(path).add(result.get(i));
                 }else{
                     List<Dataset<Row>> list =  new ArrayList<>();
@@ -89,6 +94,13 @@ public class FlokAlgNode {
 
     public void flushOutData(){
         //resultSplit
+        for(String out_path:resultSplit.keySet()){
+            System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+            System.out.println(out_path+"  ");
+            for(Dataset<Row> ds:resultSplit.get(out_path)){
+                ds.show();
+            }
+        }
     }
 
 

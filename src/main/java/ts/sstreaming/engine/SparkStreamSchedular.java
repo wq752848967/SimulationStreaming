@@ -6,6 +6,9 @@ import org.apache.spark.sql.SparkSession;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import ts.sstreaming.pojos.FLokAlgNodeStatus;
 import ts.sstreaming.pojos.FlokAlgNode;
 import ts.sstreaming.utils.impl.JarObjectLoaderImpl;
 import ts.sstreaming.utils.impl.SparkDataSplitImpl;
@@ -21,7 +24,8 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 
-public class SparkStreamSchedular {
+public class SparkStreamSchedular{
+
     /**
      *
      *  创建每个node 实例节点
@@ -31,7 +35,7 @@ public class SparkStreamSchedular {
      *
      *
      */
-
+    private static Logger LOGGER = LoggerFactory.getLogger(SparkStreamSchedular.class);
    private SparkSession session = null;
    private int threadNum = 5;
    private int batchCount  = 5;
@@ -62,17 +66,22 @@ public class SparkStreamSchedular {
         /**
          * 解析definition
          */
-
+        LOGGER.info("解析definition start ......");
         JSONArray jsonArray = new JSONArray(definition);
-        createNodes(jsonArray);
-        buildDency(jsonArray);
-
+        try{
+            createNodes(jsonArray);
+            buildDency(jsonArray);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        LOGGER.info("解析definition end ......");
 
 
 
         /**
          * 切分数据，并进行数据push
          */
+        LOGGER.info("切分数据 start ......");
         dataSpliter = new SparkDataSplitImpl(session);
         for(FlokAlgNode node:headers){
            /**
@@ -94,12 +103,14 @@ public class SparkStreamSchedular {
 
         }
 
+        LOGGER.info("切分数据 end ......");
 
         /**
          *
          * 多线程部分
          *
          */
+        LOGGER.info("task execute start ......");
         ExecutorService threadPool = Executors.newFixedThreadPool(this.threadNum);
         for(int i=0;i<threadNum;i++){
             threadPool.execute(new MessageLoop());
@@ -115,6 +126,7 @@ public class SparkStreamSchedular {
            }
 
         }
+        LOGGER.info("task execute end ......");
 
         /**
          *
@@ -122,13 +134,14 @@ public class SparkStreamSchedular {
          *
          */
         threadPool.shutdown();
+        threadPool.shutdownNow();
         /**
          *
          * 合并结果数据
          *
          */
         for(FlokAlgNode node:nodeId_algNode.values()){
-            node.outputData();
+            //node.outputData(111);
             node.flushOutData();
         }
 
@@ -152,7 +165,7 @@ public class SparkStreamSchedular {
      * 解析节点，但是不构建依赖关系
      *
      */
-    public void createNodes(JSONArray jsonArray){
+    public void createNodes(JSONArray jsonArray) throws Exception{
 
         String component_id = "";
         String nodeid_in_workflow = "";
@@ -174,17 +187,24 @@ public class SparkStreamSchedular {
             //输出
             JSONArray arr_out = jsonObject.getJSONArray("outputs");
             String[] arr_outputs = new String[arr_out.length()];
+            //System.out.println(nodeid_in_workflow+"   "+arr_out.length());
             for (int j = 0; j <arr_outputs.length; j++) {
-                arr_outputs[i] = arr_out.get(i).toString();
+
+
+                arr_outputs[j] = arr_out.get(j).toString();
             }
             /**
              * 传入masterUrl应用于初始化sparkSession
              */
             FloKAlgorithm alg = (FloKAlgorithm)classloader.loadObject(jarPath,algorithm,session);
+            if(alg==null){
+                throw  new Exception("class load err:"+jarPath+" "+algorithm);
+            }
             FlokAlgNode algNode = new FlokAlgNode(alg,algorithm,component_id,nodeid_in_workflow,param,arr_outputs);
             nodeId_algNode.put(nodeid_in_workflow,algNode);
             //nodeId_algNode.put(nodeid_in_workflow,new FlokAlgNode(null,algorithm,component_id,nodeid_in_workflow,param));
         }
+
     }
 
     /**
@@ -208,7 +228,7 @@ public class SparkStreamSchedular {
              * 遍历依赖
              */
             //[[]]
-            for(int j=0;j<arr_dency .length();j++) {
+            for(int j=0;j<arr_dency.length();j++) {
                 //[]
                 in_count.put(node_in_work,false);
                 JSONArray node_arr = arr_dency.getJSONArray(j);
@@ -247,6 +267,20 @@ public class SparkStreamSchedular {
                 node.setEndingNode(true);
             }
         }
+//        System.out.println("::************  node info:");
+//        System.out.println(""+nodeId_algNode.size());
+//        for(String nodeId:nodeId_algNode.keySet()){
+//            System.out.println(nodeId);
+//            FlokAlgNode node = nodeId_algNode.get(nodeId);
+//            for(List<String> list:node.getDency().values()){
+//                for(String den:list){
+//                    System.out.print("*");
+//                    System.out.print(den);
+//                    System.out.print("*   ");
+//                }
+//                System.out.println("");
+//            }
+//        }
 
 /**
  * 依赖构建测试代码
@@ -272,9 +306,17 @@ public class SparkStreamSchedular {
             while(true){
                 //获取任务
                 String nodeAlg_id = taskQueue.poll();
+                if(nodeAlg_id==null){
+                    continue;
+                }
+                if(nodeId_algNode.get(nodeAlg_id).getStatus()== FLokAlgNodeStatus.NodeStatus.RUNNING){
+                    taskQueue.offer(nodeAlg_id);
+                    continue;
+                }
                 //终止代码判断
                 runningNodeCount.incrementAndGet();
                 FlokAlgNode nodeAlg = nodeId_algNode.get(nodeAlg_id);
+
                 FloKDataSet fds = nodeAlg.runAlg(false);
 
                 //向下分发数据

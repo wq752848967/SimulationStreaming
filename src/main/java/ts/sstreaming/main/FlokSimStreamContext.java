@@ -12,14 +12,19 @@ import ts.sstreaming.engine.SparkStreamSchedular;
  * 缺点：
  * 不支持一次性读取配置数据
  * 不支持多数据流join于一点
- *
+ * 多线程消费队列问题
  *
  *
  */
 public class FlokSimStreamContext {
+    //空字符串意味着local[2]模式
     private static String masterUrl = "";
     private static String definition = "";
     private static String jarPath = "";
+
+    /**
+     * 算子数目 和 threadNum取最大值
+     */
     private static int threadNum = 5;
     public static void main(String[] args) throws Exception{
 
