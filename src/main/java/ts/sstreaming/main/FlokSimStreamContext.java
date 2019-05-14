@@ -63,6 +63,7 @@ public class FlokSimStreamContext {
         SparkStreamSchedular streamShcedular = new SparkStreamSchedular(session,jarPath,definition,5);
         streamShcedular.start();
 
+        System.out.println("main is ok");
         //CommandLine commandLine = parser.parse( options, args );
 
     }

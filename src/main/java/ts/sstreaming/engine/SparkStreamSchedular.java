@@ -36,6 +36,7 @@ public class SparkStreamSchedular{
      *
      */
     private static Logger LOGGER = LoggerFactory.getLogger(SparkStreamSchedular.class);
+    private static volatile boolean flag = true;
    private SparkSession session = null;
    private int threadNum = 5;
    private int batchCount  = 5;
@@ -133,8 +134,10 @@ public class SparkStreamSchedular{
          * 关闭线程池
          *
          */
+        flag = false;
         threadPool.shutdown();
         threadPool.shutdownNow();
+
         /**
          *
          * 合并结果数据
@@ -142,11 +145,13 @@ public class SparkStreamSchedular{
          */
         for(FlokAlgNode node:nodeId_algNode.values()){
             //node.outputData(111);
-            node.flushOutData();
+            //node.flushOutData();
+            node.printOutData();
         }
 
         //finish
-
+        System.out.println("is finish OK :"+threadPool.isShutdown()+" "+threadPool.isTerminated());
+        return;
     }
 
 
@@ -303,7 +308,7 @@ public class SparkStreamSchedular{
     private class MessageLoop implements  Runnable{
         @Override
         public void run() {
-            while(true){
+            while(flag){
                 //获取任务
                 String nodeAlg_id = taskQueue.poll();
                 if(nodeAlg_id==null){

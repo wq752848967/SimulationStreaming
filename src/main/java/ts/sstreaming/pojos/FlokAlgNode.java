@@ -2,6 +2,7 @@ package ts.sstreaming.pojos;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
 import ts.workflow.lib.FloKAlgorithm;
 import ts.workflow.lib.FloKDataSet;
 
@@ -97,9 +98,31 @@ public class FlokAlgNode {
         for(String out_path:resultSplit.keySet()){
             System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
             System.out.println(out_path+"  ");
+            Dataset<Row> result_union = null;
             for(Dataset<Row> ds:resultSplit.get(out_path)){
-                ds.show();
+                if(result_union==null){
+                    result_union = ds;
+                }else{
+                    result_union = ds.union(result_union);
+                }
             }
+            //out
+            result_union.write().mode(SaveMode.Overwrite).csv(out_path);
+        }
+    }
+    public void printOutData(){
+        //resultSplit
+        int index=0;
+        for(String out_path:resultSplit.keySet()){
+            System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+            System.out.println(out_path+"  ");
+            Dataset<Row> result_union = null;
+            for(Dataset<Row> ds:resultSplit.get(out_path)){
+                System.out.println(index);
+                ds.show();
+                index++;
+            }
+
         }
     }
 
