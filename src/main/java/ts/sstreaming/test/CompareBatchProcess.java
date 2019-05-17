@@ -19,7 +19,7 @@ public class CompareBatchProcess {
         //csv reader
 
         Dataset<Row> input = session.read().option("header",true).
-                option("delimiter",",").csv("hdfs://192.168.10.12:9000/flok/layer1_35all_J247.csv");
+                option("delimiter",",").csv("hdfs://192.168.10.12:9000/flok/sim_data_id.csv");
         FloKDataSet result1 = new FloKDataSet();
 
         result1.addDF(input);
