@@ -43,7 +43,7 @@ public class SparkStreamSchedular{
    private int threadNum = 5;
    private long start_time = 0;
    private long end_time = 0;
-   private int batchCount  = 5;
+   public int batchCount  = 5;
    private AtomicInteger runningNodeCount = new AtomicInteger();
    private String jarPath = "";
    private String definition =  "";
