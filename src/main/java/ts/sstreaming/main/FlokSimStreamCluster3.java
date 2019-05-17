@@ -3,7 +3,6 @@ package ts.sstreaming.main;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
-import ts.sstreaming.test.NumericExprMultiCol;
 import ts.sstreaming.utils.impl.JarObjectLoaderImpl;
 import ts.workflow.lib.FloKAlgorithm;
 import ts.workflow.lib.FloKDataSet;
