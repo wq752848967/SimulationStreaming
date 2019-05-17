@@ -19,31 +19,19 @@ public class CompareBatchProcess {
         //csv reader
 
         Dataset<Row> input = session.read().option("header",true).
-                option("delimiter",",").csv("hdfs://192.168.10.12:9000/flok/sim_data_id.csv");
-        FloKDataSet result1 = new FloKDataSet();
+                option("delimiter",",").csv("hdfs://192.168.10.12:9000/flok/sim_data_small.csv");
+        input.registerTempTable("t");
+        Dataset<Row> input2 = session.sql("select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247  from t group by id");
 
-        result1.addDF(input);
-        //sql
-        FloKDataSet result2 = new FloKDataSet();
-        result1.get(0).createOrReplaceTempView("t");
-        result2.addDF(session.sql("select * from t where align_time >= \"2019-01-23 00:00:00+0800\" and align_time <= \"2019-01-23 18:00:00+0800\""));
-        //filter
-        FloKDataSet result3 = new FloKDataSet();
 
-        result2.get(0).createOrReplaceTempView("dtable");
-        Dataset<Row> tmp = null;
-        tmp = session.sql("SELECT * FROM dtable where " +"J_0001_00_247<7000");
-        result3.addDF(tmp);
+        input2.registerTempTable("t2");
+        Dataset<Row> input3 = session.sql("select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247  from t2 group by id");
 
-        FloKDataSet result4 = new FloKDataSet();
-        String[] attrStrings = new String[4];
-        attrStrings[0] = "host";
-        attrStrings[1] = "align_time";
-        attrStrings[2] = "J_0001_00_247";
-        attrStrings[3] = "id";
-        result4.addDF(result3.get(0).selectExpr(attrStrings));
-        //select col
-        result4.get(0).show();
+
+        input3.registerTempTable("t3");
+        Dataset<Row> input4 = session.sql("select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247  from t3 group by id");
+
+        input4.show();
         long end = System.currentTimeMillis();
         System.out.println((end-start)/1000);
     }
