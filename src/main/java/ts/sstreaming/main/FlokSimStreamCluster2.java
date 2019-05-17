@@ -21,7 +21,7 @@ public class FlokSimStreamCluster2 {
 //        streamShcedular.start();
         Dataset<Row> ds = session.read().option("header","true").csv("hdfs://192.168.10.12:9000/flok/layer1_35all_J247.csv");
         ds.registerTempTable("t");
-        Dataset<Row> ds2 = session.sql("select  max(t1.host),max(t1.J_0001_00_247),max(t2.J_0001_00_247) from t as t1 inner join t as t2 on t1.J_0001_00_247>t2.J_0001_00_247 group by t1.host");
+        Dataset<Row> ds2 = session.sql("select  max(t1.host),max(t1.J_0001_00_247) as j1,max(t2.J_0001_00_247) as j2 from t as t1 inner join t as t2 on t1.J_0001_00_247>t2.J_0001_00_247 group by t1.host");
         ds2.write().option("header","true").csv("hdfs://192.168.10.12:9000/flok/sim_data_id_sql_max.csv");
         ds2.show();
         session.close();
