@@ -25,7 +25,7 @@ public class FlokSimStreamCluster3 {
 //        streamShcedular.batchCount=2;
 //        streamShcedular.start();
         JarObjectLoaderImpl classloader = new JarObjectLoaderImpl();
-        FloKAlgorithm alg = (FloKAlgorithm)classloader.loadObject(jarPath,"ts.workflow.operator.NumericExprMultiCol",session);
+        FloKAlgorithm alg = (FloKAlgorithm)classloader.loadObject(jarPath_server,"ts.workflow.operator.NumericExprMultiCol",session);
         HashMap<String,String> map = new HashMap<>();
         Dataset<Row> ds = session.read().option("header","true").csv("hdfs://192.168.10.12:9000/flok/layer1_35all_J247.csv");
         FloKDataSet fds = new FloKDataSet();
