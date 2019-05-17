@@ -2,6 +2,7 @@ package ts.sstreaming.main;
 
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 import ts.sstreaming.utils.impl.JarObjectLoaderImpl;
 import ts.workflow.lib.FloKAlgorithm;
@@ -27,7 +28,7 @@ public class FlokSimStreamCluster3 {
         JarObjectLoaderImpl classloader = new JarObjectLoaderImpl();
         FloKAlgorithm alg = (FloKAlgorithm)classloader.loadObject(jarPath_server,"ts.workflow.operator.NumericExprMultiCol",session);
         HashMap<String,String> map = new HashMap<>();
-        Dataset<Row> ds = session.read().option("header","true").csv("hdfs://192.168.10.12:9000/flok/layer1_35all_J247.csv");
+        Dataset<Row> ds = session.read().option("header","true").csv("hdfs://192.168.10.12:9000/flok/sim_data_id.csv");
         FloKDataSet fds = new FloKDataSet();
         fds.addDF(ds);
 //        alg.sparkSession = session;
@@ -46,7 +47,7 @@ public class FlokSimStreamCluster3 {
             System.out.println("!!!!!");
         }
         //System.out.println(rds.get(0).count());
-        rds.get(0).write().option("header","true").csv("hdfs://192.168.10.12:9000/flok/sim_data_numexp.csv");
+        rds.get(0).write().option("header","true").mode(SaveMode.Overwrite).csv("hdfs://192.168.10.12:9000/flok/sim_data_numexp.csv");
         //session.close();
     }
 }

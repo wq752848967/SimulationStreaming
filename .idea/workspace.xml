@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="433ad6fb-0f3e-4a68-8090-63c11b0f93c5" name="Default Changelist" comment="wq: &#10;big data test">
+    <list default="true" id="433ad6fb-0f3e-4a68-8090-63c11b0f93c5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster3.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,7 +51,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="23" />
-          <entry key="java" value="12506" />
+          <entry key="java" value="12514" />
           <entry key="list" value="341" />
           <entry key="sh" value="19" />
           <entry key="txt" value="223" />
@@ -59,7 +60,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12506" />
+          <entry key="JAVA" value="12514" />
           <entry key="PLAIN_TEXT" value="606" />
           <entry key="XML" value="27" />
         </counts>
@@ -113,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+            <state relative-caret-position="326">
+              <caret line="30" column="112" selection-start-line="30" selection-start-column="112" selection-end-line="30" selection-end-column="112" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -666,7 +667,21 @@
       <option name="project" value="LOCAL" />
       <updated>1558093957961</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="wq: &#10;big data test">
+      <created>1558094687572</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1558094687572</updated>
+    </task>
+    <task id="LOCAL-00024" summary="wq: &#10;big data test">
+      <created>1558094831400</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1558094831400</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1021,8 +1036,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+        <state relative-caret-position="326">
+          <caret line="30" column="112" selection-start-line="30" selection-start-column="112" selection-end-line="30" selection-end-column="112" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
