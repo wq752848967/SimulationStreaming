@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="433ad6fb-0f3e-4a68-8090-63c11b0f93c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/CompareBatchProcess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/SparkStreamSchedular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/SparkStreamSchedular.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/CompareBatchProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/CompareBatchProcess.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,10 +25,11 @@
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -50,7 +54,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="23" />
-          <entry key="java" value="11531" />
+          <entry key="java" value="12018" />
           <entry key="list" value="341" />
           <entry key="sh" value="19" />
           <entry key="txt" value="210" />
@@ -59,7 +63,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="11531" />
+          <entry key="JAVA" value="12018" />
           <entry key="PLAIN_TEXT" value="593" />
           <entry key="XML" value="27" />
         </counts>
@@ -80,20 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/SparkStreamSchedular.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="136" column="21" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state relative-caret-position="113">
+              <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -116,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+            <state relative-caret-position="-151">
+              <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -128,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="934" selection-start-line="7" selection-start-column="934" selection-end-line="7" selection-end-column="934" />
+            <state relative-caret-position="162">
+              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -140,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
+            <state relative-caret-position="252">
+              <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -149,8 +141,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamReadTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="19" column="18" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="19" selection-end-column="18" />
+            <state relative-caret-position="148">
+              <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -158,8 +150,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/CompareBatchProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="665">
-              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+            <state relative-caret-position="197">
+              <caret line="11" column="217" selection-start-line="11" selection-start-column="217" selection-end-line="11" selection-end-column="217" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -228,11 +220,11 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamContext.java" />
         <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/pojos/FlokAlgNode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/SparkStreamSchedular.java" />
         <option value="$PROJECT_DIR$/package.sh" />
-        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster.java" />
         <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamReadTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/SparkStreamSchedular.java" />
         <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/CompareBatchProcess.java" />
       </list>
     </option>
@@ -250,6 +242,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="simulationstreaming" type="58d84e3e:PackageViewProjectNode" />
+              <item name="simulationstreaming" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -317,17 +320,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="simulationstreaming" type="58d84e3e:PackageViewProjectNode" />
-              <item name="simulationstreaming" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,9 +348,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FlokSimStreamTest">
+  <component name="RunManager" selected="Application.CompareBatchProcess">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompareBatchProcess" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ts.sstreaming.test.CompareBatchProcess" />
+      <module name="simulationstreaming" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ts.sstreaming.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -429,23 +435,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SparkDataSplitUT.testRun" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="simulationstreaming" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ts.sstreaming.utils.ut.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ts.sstreaming.utils.ut" />
-      <option name="MAIN_CLASS_NAME" value="ts.sstreaming.utils.ut.SparkDataSplitUT" />
-      <option name="METHOD_NAME" value="testRun" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -471,18 +460,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.SparkDataSplitUT" />
-      <item itemvalue="JUnit.SparkDataSplitUT.testRun" />
       <item itemvalue="JUnit.JarObjectLoaderUT.testRun" />
       <item itemvalue="Application.test" />
       <item itemvalue="Application.FlokSimStreamTest" />
+      <item itemvalue="Application.CompareBatchProcess" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CompareBatchProcess" />
         <item itemvalue="Application.FlokSimStreamTest" />
         <item itemvalue="Application.test" />
         <item itemvalue="JUnit.JarObjectLoaderUT.testRun" />
         <item itemvalue="JUnit.SparkDataSplitUT" />
-        <item itemvalue="JUnit.SparkDataSplitUT.testRun" />
       </list>
     </recent_temporary>
   </component>
@@ -603,7 +592,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557891040150</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="wq: &#10;add CompareBatchProcess">
+      <created>1557893577689</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1557893577689</updated>
+    </task>
+    <task id="LOCAL-00016" summary="wq: &#10;add CompareBatchProcess">
+      <created>1557893955043</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1557893955043</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -690,7 +693,8 @@
     <MESSAGE value="wq: &#10;1.union result data&#10;2.exit bug&#10;3.test new workflow definition" />
     <MESSAGE value="wq: &#10;add package sh" />
     <MESSAGE value="wq: &#10;add cluster test file" />
-    <option name="LAST_COMMIT_MESSAGE" value="wq: &#10;add cluster test file" />
+    <MESSAGE value="wq: &#10;add CompareBatchProcess" />
+    <option name="LAST_COMMIT_MESSAGE" value="wq: &#10;add CompareBatchProcess" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/spark/sql/RowUtils.java" />
@@ -856,26 +860,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/SparkStreamSchedular.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="136" column="21" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/pojos/FlokAlgNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1782">
@@ -893,10 +877,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="934" selection-start-line="7" selection-start-column="934" selection-end-line="7" selection-end-column="934" />
+        <state relative-caret-position="72">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -905,32 +889,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="65" column="38" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+        <state relative-caret-position="-151">
+          <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamReadTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
+        <state relative-caret-position="148">
+          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamReadTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamCluster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="18" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="19" selection-end-column="18" />
+        <state relative-caret-position="252">
+          <caret line="15" column="64" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/SparkStreamSchedular.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/CompareBatchProcess.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+        <state relative-caret-position="197">
+          <caret line="11" column="217" selection-start-line="11" selection-start-column="217" selection-end-line="11" selection-end-column="217" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

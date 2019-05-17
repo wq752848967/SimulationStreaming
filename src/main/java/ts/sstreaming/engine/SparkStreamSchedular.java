@@ -8,6 +8,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ts.sstreaming.main.FlokSimStreamContext;
+import ts.sstreaming.main.FlokSimStreamTest;
 import ts.sstreaming.pojos.FLokAlgNodeStatus;
 import ts.sstreaming.pojos.FlokAlgNode;
 import ts.sstreaming.utils.impl.JarObjectLoaderImpl;
@@ -39,6 +41,8 @@ public class SparkStreamSchedular{
     private static volatile boolean flag = true;
    private SparkSession session = null;
    private int threadNum = 5;
+   private long start_time = 0;
+   private long end_time = 0;
    private int batchCount  = 5;
    private AtomicInteger runningNodeCount = new AtomicInteger();
    private String jarPath = "";
@@ -67,6 +71,8 @@ public class SparkStreamSchedular{
         /**
          * 解析definition
          */
+
+        start_time = System.currentTimeMillis();
         LOGGER.info("解析definition start ......");
         JSONArray jsonArray = new JSONArray(definition);
         try{
@@ -76,12 +82,14 @@ public class SparkStreamSchedular{
             e.printStackTrace();
         }
         LOGGER.info("解析definition end ......");
-
+        end_time = System.currentTimeMillis();
+        FlokSimStreamTest.timeLog.add(("解析definition :"+(end_time-start_time)/1000)+"");
 
 
         /**
          * 切分数据，并进行数据push
          */
+        start_time = System.currentTimeMillis();
         LOGGER.info("切分数据 start ......");
         dataSpliter = new SparkDataSplitImpl(session);
         for(FlokAlgNode node:headers){
@@ -103,14 +111,16 @@ public class SparkStreamSchedular{
            }
 
         }
-
         LOGGER.info("切分数据 end ......");
+        end_time = System.currentTimeMillis();
+        FlokSimStreamTest.timeLog.add(("切分数据 :"+(end_time-start_time)/1000)+"");
 
         /**
          *
          * 多线程部分
          *
          */
+        start_time = System.currentTimeMillis();
         LOGGER.info("task execute start ......");
         ExecutorService threadPool = Executors.newFixedThreadPool(this.threadNum);
         for(int i=0;i<threadNum;i++){
@@ -121,14 +131,15 @@ public class SparkStreamSchedular{
         //终止的条件：无任务在执行，并且taskqueue中为空
         while(!checkStreamStatus()){
            try{
-               Thread.sleep(30000);
+               Thread.sleep(3000);
            }catch (InterruptedException ie){
                ie.printStackTrace();
            }
 
         }
         LOGGER.info("task execute end ......");
-
+        end_time = System.currentTimeMillis();
+        FlokSimStreamTest.timeLog.add(("数据片执行 :"+(end_time-start_time)/1000)+"");
         /**
          *
          * 关闭线程池
@@ -143,12 +154,14 @@ public class SparkStreamSchedular{
          * 合并结果数据
          *
          */
+        start_time = System.currentTimeMillis();
         for(FlokAlgNode node:nodeId_algNode.values()){
             //node.outputData(111);
             //node.flushOutData();
             node.printOutData();
         }
-
+        end_time = System.currentTimeMillis();
+        FlokSimStreamTest.timeLog.add(("合并数据 :"+(end_time-start_time)/1000)+"");
         //finish
         System.out.println("is finish OK :"+threadPool.isShutdown()+" "+threadPool.isTerminated());
         return;
