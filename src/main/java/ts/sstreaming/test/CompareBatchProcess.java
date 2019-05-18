@@ -20,7 +20,7 @@ public class CompareBatchProcess {
         //csv reader
 
         Dataset<Row> input = session.read().option("header",true).
-                option("delimiter",",").csv("hdfs://192.168.10.12:9000/flok/sim_data_small.csv");
+                option("delimiter",",").csv("hdfs://192.168.10.12:9000/flok/sim_data_id.csv");
         input.registerTempTable("t");
         Dataset<Row> input2 = session.sql("select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247  from t group by id");
 
