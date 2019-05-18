@@ -20,8 +20,8 @@ public class FlokSimStreamTest {
         long start = System.currentTimeMillis();
         SparkSession session = SparkSession.builder().master(masterUrl).getOrCreate();
         SparkStreamSchedular streamShcedular = new SparkStreamSchedular(session,jarPath_server,definition,12);
-        streamShcedular.batchCount = Integer.parseInt("1");
-//        streamShcedular.batchCount = Integer.parseInt(args[0]);
+        //streamShcedular.batchCount = Integer.parseInt("1");
+        streamShcedular.batchCount = Integer.parseInt(args[0]);
         streamShcedular.start();
         long end = System.currentTimeMillis();
         timeLog.add("总时间：:"+((end-start)/1000)+"");
