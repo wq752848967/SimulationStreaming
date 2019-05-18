@@ -337,10 +337,11 @@ public class SparkStreamSchedular{
 
                 FloKDataSet fds = nodeAlg.runAlg(false);
 
-                fds.get(0).count();
+
 
                 //向下分发数据
                 if(fds.getSize()>0){
+                    fds.get(0).count();
                     for(String key:nodeAlg.getDency().keySet()){
                         List<String> den_list_id = nodeAlg.getDency().get(key);
                         Dataset<Row> data_split = fds.get(Integer.parseInt(key));
