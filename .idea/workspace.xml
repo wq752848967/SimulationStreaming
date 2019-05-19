@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="433ad6fb-0f3e-4a68-8090-63c11b0f93c5" name="Default Changelist" comment="">
+    <list default="true" id="433ad6fb-0f3e-4a68-8090-63c11b0f93c5" name="Default Changelist" comment="wq: structure stream test">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/ReWrite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCounSpark.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCounSpark.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,7 +35,7 @@
         <counts>
           <entry key="class" value="2" />
           <entry key="iml" value="1" />
-          <entry key="java" value="96" />
+          <entry key="java" value="97" />
           <entry key="list" value="2" />
           <entry key="sh" value="1" />
           <entry key="xml" value="4" />
@@ -43,7 +45,7 @@
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="96" />
+          <entry key="JAVA" value="97" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="4" />
         </counts>
@@ -51,7 +53,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="23" />
-          <entry key="java" value="14243" />
+          <entry key="java" value="14348" />
           <entry key="list" value="341" />
           <entry key="sh" value="19" />
           <entry key="txt" value="244" />
@@ -60,7 +62,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14243" />
+          <entry key="JAVA" value="14348" />
           <entry key="PLAIN_TEXT" value="627" />
           <entry key="XML" value="27" />
         </counts>
@@ -108,8 +110,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCounSpark.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="355">
+              <caret line="29" column="86" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,10 +132,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/ReWrite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+            <state relative-caret-position="234">
+              <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -240,6 +254,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCounSpark.java" />
         <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/ReWrite.java" />
       </list>
     </option>
   </component>
@@ -307,17 +322,6 @@
               <item name="ts" type="462c0819:PsiDirectoryNode" />
               <item name="sstreaming" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="simulationstreaming" type="b2602c69:ProjectViewProjectNode" />
-              <item name="simulationstreaming" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ts" type="462c0819:PsiDirectoryNode" />
-              <item name="sstreaming" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Test.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
           </expand>
           <select />
@@ -764,7 +768,21 @@
       <option name="project" value="LOCAL" />
       <updated>1558265345267</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="wq: structure stream test">
+      <created>1558265499646</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1558265499646</updated>
+    </task>
+    <task id="LOCAL-00039" summary="wq: structure stream test">
+      <created>1558265718984</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1558265718984</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1152,8 +1170,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCounSpark.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="355">
+          <caret line="29" column="86" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1162,8 +1180,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        <state relative-caret-position="310">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/ReWrite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="66" selection-start-line="13" selection-start-column="66" selection-end-line="13" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

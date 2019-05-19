@@ -27,7 +27,7 @@ public class WordCounSpark implements Serializable {
 
 
         // 3.读取本地文件
-        JavaRDD<String> lines = sc.textFile("hdfs://192.168.10.12:9000/flok/wordcount.txt");
+        JavaRDD<String> lines = sc.textFile("hdfs://192.168.10.12:9000/flok/wordcount2");
 
         // 4.每行以空格切割
         JavaRDD<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
