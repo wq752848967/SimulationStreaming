@@ -20,7 +20,7 @@ public class WordCountStructure  {
                 .getOrCreate();
         Dataset<String> lines = spark
                 .readStream()
-                .textFile("hdfs://192.168.10.12:9000/flok/wordcount.txt");
+                .textFile("hdfs://192.168.10.12:9000/flok/wordcount");
 
 // Split the lines into words
         Dataset<String> words = lines
