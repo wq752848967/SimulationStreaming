@@ -3,13 +3,13 @@ package ts.sstreaming.pojos;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SaveMode;
+import ts.sstreaming.main.FlokSimStreamContext;
+import ts.sstreaming.main.FlokSimStreamTest;
 import ts.workflow.lib.FloKAlgorithm;
 import ts.workflow.lib.FloKDataSet;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class FlokAlgNode {
@@ -18,6 +18,8 @@ public class FlokAlgNode {
     private String className = "";
     private volatile FLokAlgNodeStatus.NodeStatus status = FLokAlgNodeStatus.NodeStatus.WAIT;
     private String component_id = "";
+    private int run_times = 0;
+    private int out_times = 0;
     private String nodeid_in_workflow = "";
     private LinkedBlockingQueue<Dataset<Row>> data_queue = new LinkedBlockingQueue<>();
     private HashMap<String,String> params = null;
@@ -49,26 +51,30 @@ public class FlokAlgNode {
      * @return
      */
     public FloKDataSet runAlg(boolean isHead){
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String cur_time = df.format(new Date());
+        long start_time  = System.currentTimeMillis();
         status = FLokAlgNodeStatus.NodeStatus.RUNNING;
-
         if(isHead){
             result =  flokAlg.run(new FloKDataSet(),params);
         }else{
             flokDataset.clearDF();
             Dataset<Row> data = data_queue.poll();
             flokDataset.addDF(data);
-
             result = flokAlg.run(flokDataset,params);
             //int count =  result.getSize();
             //System.out.println("result:"+result.getSize());
             if(isEndingNode){
                 //尾节点数据处理
-
                 outputData();
                 result.clearDF();
             }
 
         }
+        long end_time  = System.currentTimeMillis();
+        String info = "Run: "+className+"  times:"+run_times+"  begin:"+cur_time+"   end:"+System.currentTimeMillis()+"  total:"+(end_time-start_time)/1000;
+        FlokSimStreamTest.timeLog.add(info);
+        run_times++;
         status = FLokAlgNodeStatus.NodeStatus.WAIT;
        return result;
     }
@@ -112,14 +118,23 @@ public class FlokAlgNode {
     }
     public void printOutData(){
         //resultSplit
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String cur_time = df.format(new Date());
+        FlokSimStreamTest.timeLog.add("Show result beging time:"+cur_time);
         int index=0;
         for(String out_path:resultSplit.keySet()){
             System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
             System.out.println(out_path+"  ");
             Dataset<Row> result_union = null;
+
             for(Dataset<Row> ds:resultSplit.get(out_path)){
                 System.out.println(index);
+                long start_time  = System.currentTimeMillis();
                 ds.show();
+                long end_time  = System.currentTimeMillis();
+                String info = "Show action, times:"+out_times+"  start:"+start_time+"  end:"+end_time+"  total:"+(end_time-start_time)/1000;
+                FlokSimStreamTest.timeLog.add(info);
+                out_times++;
                 index++;
             }
 

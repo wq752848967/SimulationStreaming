@@ -13,7 +13,7 @@ import java.net.URLClassLoader;
 
 public class JarObjectLoaderImpl implements ObjectLoaderInter {
     private static Logger LOGGER = LoggerFactory.getLogger(JarObjectLoaderImpl.class);
-
+    private static int instance_id = 0;
     public FloKAlgorithm loadObject(String path, String className, Object context){
         SparkSession sparkSession = (SparkSession)context;
         FloKAlgorithm alg = (FloKAlgorithm)load(path,className);

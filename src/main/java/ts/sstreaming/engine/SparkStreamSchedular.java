@@ -47,6 +47,7 @@ public class SparkStreamSchedular{
    private AtomicInteger runningNodeCount = new AtomicInteger();
    private String jarPath = "";
    private String definition =  "";
+   private int node_instance_id = 0;
    private ObjectLoaderInter classloader = null;
    private List<FlokAlgNode> headers = new ArrayList<>();
    private DataSplitInter dataSpliter = null;
@@ -218,8 +219,9 @@ public class SparkStreamSchedular{
             if(alg==null){
                 throw  new Exception("class load err:"+jarPath+" "+algorithm);
             }
-            FlokAlgNode algNode = new FlokAlgNode(alg,algorithm,component_id,nodeid_in_workflow,param,arr_outputs);
+            FlokAlgNode algNode = new FlokAlgNode(alg,algorithm+"_"+node_instance_id,component_id,nodeid_in_workflow,param,arr_outputs);
             nodeId_algNode.put(nodeid_in_workflow,algNode);
+            node_instance_id++;
             //nodeId_algNode.put(nodeid_in_workflow,new FlokAlgNode(null,algorithm,component_id,nodeid_in_workflow,param));
         }
 
@@ -341,7 +343,7 @@ public class SparkStreamSchedular{
 
                 //向下分发数据
                 if(fds.getSize()>0){
-                    fds.get(0).count();
+                    //fds.get(0).count();
                     for(String key:nodeAlg.getDency().keySet()){
                         List<String> den_list_id = nodeAlg.getDency().get(key);
                         Dataset<Row> data_split = fds.get(Integer.parseInt(key));

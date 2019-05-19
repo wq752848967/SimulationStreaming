@@ -3,6 +3,9 @@ package ts.sstreaming.engine;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class test {
     public static void main(String[] args) {
 //        String json = "[{'nodeid_in_workflow':'71390cea-53a1-4979-b7ec-c736ba11ad1a','component_id':'34b8de51c05141c8af20210f4c7eec71','params':{'path':'hdfs://192.168.10.12:9000/flok/task4.csv','delimiter':',','header_text':'','returns':[]},'requirements_id':[],'ports':[],'algorithm':'ReadHdfsOper'},{'nodeid_in_workflow':'50877668-1b06-4ac0-93ec-fd6ca69ee9a9','component_id':'34b8de51c05141c8af20210f4c7eec71',\n" +
@@ -15,7 +18,8 @@ public class test {
 //                "]";
 //        SparkStreamSchedular schedular = new SparkStreamSchedular("","",json);
 //        schedular.start();
-        JSONObject jsonArray = new JSONObject("{'node':['hdfs','alluxio']}");
-        System.out.println(jsonArray.getJSONArray("node").get(0));
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        System.out.println(df.format(new Date()));// new Date()为获取当前系统时间
+
     }
 }
