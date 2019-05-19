@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="433ad6fb-0f3e-4a68-8090-63c11b0f93c5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCounSpark.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/SparkStreamSchedular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/SparkStreamSchedular.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/engine/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/main/FlokSimStreamTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/pojos/FlokAlgNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/pojos/FlokAlgNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/JarObjectLoaderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/utils/impl/JarObjectLoaderImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -58,17 +51,17 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="23" />
-          <entry key="java" value="14225" />
+          <entry key="java" value="14243" />
           <entry key="list" value="341" />
           <entry key="sh" value="19" />
-          <entry key="txt" value="223" />
+          <entry key="txt" value="244" />
           <entry key="xml" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14225" />
-          <entry key="PLAIN_TEXT" value="606" />
+          <entry key="JAVA" value="14243" />
+          <entry key="PLAIN_TEXT" value="627" />
           <entry key="XML" value="27" />
         </counts>
       </usages-collector>
@@ -115,8 +108,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCounSpark.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="20" column="54" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="54" />
+            <state relative-caret-position="324">
+              <caret line="18" column="26" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+            <state relative-caret-position="360">
+              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -757,7 +750,21 @@
       <option name="project" value="LOCAL" />
       <updated>1558145159486</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="wq: structure stream test">
+      <created>1558264507877</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1558264507878</updated>
+    </task>
+    <task id="LOCAL-00037" summary="wq: structure stream test">
+      <created>1558265345267</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1558265345267</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -846,7 +853,8 @@
     <MESSAGE value="wq: &#10;add cluster test file" />
     <MESSAGE value="wq: &#10;add CompareBatchProcess" />
     <MESSAGE value="wq: &#10;big data test" />
-    <option name="LAST_COMMIT_MESSAGE" value="wq: &#10;big data test" />
+    <MESSAGE value="wq: structure stream test" />
+    <option name="LAST_COMMIT_MESSAGE" value="wq: structure stream test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1144,8 +1152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCounSpark.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="54" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="54" />
+        <state relative-caret-position="324">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1154,8 +1162,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ts/sstreaming/test/WordCountStructure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        <state relative-caret-position="360">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

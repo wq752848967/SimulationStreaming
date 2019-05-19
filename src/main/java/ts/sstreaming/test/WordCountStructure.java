@@ -18,9 +18,9 @@ public class WordCountStructure  {
                 .master("spark://192.168.10.12:7077")
                 .appName("JavaStructuredNetworkWordCount")
                 .getOrCreate();
-        Dataset<Row> lines = spark
+        Dataset<String> lines = spark
                 .readStream()
-                .text("hdfs://192.168.10.12:9000/flok/wordcount.txt");
+                .textFile("hdfs://192.168.10.12:9000/flok/wordcount.txt");
 
 // Split the lines into words
         Dataset<String> words = lines
