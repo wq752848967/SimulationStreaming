@@ -18,19 +18,23 @@ public class Test {
         String masterUrl = "local[8]";
         AtomicInteger val  = new AtomicInteger();
         SparkSession session = SparkSession.builder().master(masterUrl).getOrCreate();
-        Dataset<Row> ds1 = session.read().option("header","true").csv("hdfs://192.168.10.12:9000/flok/sim_data_small.csv");
-        //Dataset<Row> ds2 = session.read().option("header","true").csv("hdfs://192.168.10.12:9000/flok/layer1_35all_J247.csv");
-        LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
-        ExecutorService pool = Executors.newFixedThreadPool(2);
-        pool.submit(new ParTest(ds1,1,queue,val));
-        //.submit(new ParTest(ds2,2,queue,val));
 
-        while(val.get()<1){
-            Thread.sleep(4);
-        }
-        for (int i = 0; i < 2; i++) {
-            System.out.println(queue.poll());
-        }
+        Dataset<Row> ds1 = session.read().option("header","true").csv("hdfs://192.168.10.12:9000/flok/sim_data_small.csv");
+        Dataset<Row> ds2 = ds1.coalesce(1);
+        ds2.write().option("header","true").csv("/Users/wangqi/Desktop/FloK/sim/sim_test_small.csv");
+        //
+// Dataset<Row> ds2 = session.read().option("header","true").csv("hdfs://192.168.10.12:9000/flok/layer1_35all_J247.csv");
+//        LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
+//        ExecutorService pool = Executors.newFixedThreadPool(2);
+//        pool.submit(new ParTest(ds1,1,queue,val));
+//        //.submit(new ParTest(ds2,2,queue,val));
+//
+//        while(val.get()<1){
+//            Thread.sleep(4);
+//        }
+//        for (int i = 0; i < 2; i++) {
+//            System.out.println(queue.poll());
+//        }
 //        ds.registerTempTable("t");
 //        Dataset<Row> new_ds = session.sql("select max(id) from t group by id");
 //        new_ds.count();
