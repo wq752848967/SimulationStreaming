@@ -24,7 +24,7 @@ public class FlokSimStreamTest {
         }catch (Exception e){
             System.out.println("Error: batchcount = Integer.parseInt(args[0]);");
         }
-        SparkStreamSchedular streamShcedular = new SparkStreamSchedular(session,jarPath,definition,8,batchcount);
+        SparkStreamSchedular streamShcedular = new SparkStreamSchedular(session,jarPath_server,definition,8,batchcount);
         streamShcedular.start();
 
         long end = System.currentTimeMillis();
