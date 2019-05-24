@@ -76,7 +76,7 @@ public class FlokAlgNode {
 
         }
         long end_time  = System.currentTimeMillis();
-        String info = "Run: "+className+"  times:"+run_times+"  begin:"+cur_time+"   end:"+System.currentTimeMillis()+"  total:"+(end_time-start_time)/1000;
+        String info = "Run: "+className+"  times:"+run_times+"  begin:"+cur_time+"   end:"+System.currentTimeMillis()+"  total:"+(end_time-start_time)/1000+"  "+params ;
         FlokSimStreamTest.timeLog.add(info);
         run_times++;
         status = FLokAlgNodeStatus.NodeStatus.WAIT;
