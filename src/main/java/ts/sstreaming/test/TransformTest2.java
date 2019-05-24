@@ -37,7 +37,7 @@ public class TransformTest2 {
         //ds3.show();
         //RDD<Row> rdd = ds3.rdd();
         //SparkContext ctx = spark.sparkContext();
-        //ds3.sparkSession().sparkContext().runJob(ds3.rdd(), new JobFunc(), ClassTag$.MODULE$.apply( Void.class ));
+        ds3.sparkSession().sparkContext().runJob(ds3.rdd(), new JobFunc(), ClassTag$.MODULE$.apply( Void.class ));
 
         //long run_end = System.currentTimeMillis();
         //System.out.println("runjob time cost:"+(run_end-start)/1000);

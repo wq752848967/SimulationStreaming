@@ -5,6 +5,7 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SaveMode;
 import ts.sstreaming.main.FlokSimStreamContext;
 import ts.sstreaming.main.FlokSimStreamTest;
+import ts.sstreaming.utils.SparkJobSubmiter;
 import ts.workflow.lib.FloKAlgorithm;
 import ts.workflow.lib.FloKDataSet;
 
@@ -62,6 +63,9 @@ public class FlokAlgNode {
             Dataset<Row> data = data_queue.poll();
             flokDataset.addDF(data);
             result = flokAlg.run(flokDataset,params);
+            Dataset<Row> re_ds = SparkJobSubmiter.runJob(result.get(0));
+            result.clearDF();
+            result.addDF(re_ds);
             //int count =  result.getSize();
             //System.out.println("result:"+result.getSize());
             if(isEndingNode){
