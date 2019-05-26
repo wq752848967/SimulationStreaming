@@ -59,7 +59,13 @@ public class SparkStreamSchedular{
         this.definition = definition;
         this.threadNum = threadNum;
     }
-
+    public SparkStreamSchedular(SparkSession session, String jarPath, String definition,int threadNum,int batchCount) {
+        this.session = session;
+        this.jarPath = jarPath;
+        this.definition = definition;
+        this.threadNum = threadNum;
+        this.batchCount = batchCount;
+    }
 
     public void start(){
 
