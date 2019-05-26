@@ -37,11 +37,11 @@ public class WordCounSpark implements Serializable {
         Dataset<Row> ds_input2 = spark.sql("select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t group by id");
 
 
-        //ds_input2.registerTempTable("t2");
+        ds_input2.registerTempTable("t2");
 
-//        Dataset<Row> ds_input3 = spark.sql("select t_1.id as id,t_1.host as host ,t_1.J_0001_00_247 as J_0001_00_247,t_2.id  as id2 from t2 as t_1 INNER JOIN t2 as t_2 on t_1.id > (t_2.id-10) and  t_1.id < (t_2.id+10)");
+        Dataset<Row> ds_input3 = spark.sql("select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t2 group by J_0001_00_247");
 
-        ds_input2.show();
+        ds_input3.show();
         long end_1 = System.currentTimeMillis();
         System.out.println("总时间：:"+((end_1-start_time)/1000)+"");
 

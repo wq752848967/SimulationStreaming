@@ -43,17 +43,17 @@ public class SparkStructTest {
         param.put("sql_expr","select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t group by id");
         param.put("table_name","t");
         FloKDataSet flok_result_ds = flokNode.run(flok_ds,param);
-//
-//
-//
-//        FloKAlgorithm flokNode2 = new SqlExprExecute();
-//        flokNode2.sparkSession = spark;
 
-//        HashMap<String,String> param2 = new HashMap<>();
-//        param2.put("sql_expr","select t_1.id as id,t_1.host as host ,t_1.J_0001_00_247 as J_0001_00_247,t_2.id  as id2 from t2 as t_1 INNER JOIN t2 as t_2 on t_1.id > (t_2.id-10) and  t_1.id < (t_2.id+10)");
-//        param2.put("table_name","t2");
-//        FloKDataSet flok_result_ds2 = flokNode2.run(flok_result_ds,param2);
-        StreamingQuery query = flok_result_ds.get(0).writeStream()
+
+
+        FloKAlgorithm flokNode2 = new SqlExprExecute();
+        flokNode2.sparkSession = spark;
+
+        HashMap<String,String> param2 = new HashMap<>();
+        param2.put("sql_expr","select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t2 group by J_0001_00_247");
+        param2.put("table_name","t2");
+        FloKDataSet flok_result_ds2 = flokNode2.run(flok_result_ds,param2);
+        StreamingQuery query = flok_result_ds2.get(0).writeStream()
                 .outputMode("complete")
                 .format("console")
                 .start();
