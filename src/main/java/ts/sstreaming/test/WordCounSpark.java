@@ -25,36 +25,25 @@ public class WordCounSpark implements Serializable {
     public static void main(String[] args) throws StreamingQueryException {
         SparkSession spark = SparkSession
                 .builder()
-                .master("local[2]")
+                .master("spark://192.168.10.12:7077")
                 .appName("JavaStructuredNetworkWordCount")
                 .getOrCreate();
 
-        DataSourceOp dsource = new DataSourceOp(spark);
-        boolean batch = false;
-        Dataset<String> ds_input = null;
-        if(batch){
-            ds_input = dsource.getBatchDs("/Users/wangqi/Desktop/FloK/sim/sim_text.csv");
 
-        }else{
-            ds_input = dsource.getStreamDs("/Users/wangqi/Desktop/FloK/sim/sim_text.csv");
-        }
+        Dataset<Row> ds_input = spark.read().csv("hdfs://192.168.10.12:9000/flok/sim_data_small.csv");
+        long start_time = System.currentTimeMillis();
+        ds_input.registerTempTable("t");
+
+        Dataset<Row> ds_input2 = spark.sql("select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t group by id");
 
 
-        Dataset<String> ds_sum = ds_input.flatMap((FlatMapFunction<String, String>) x -> Arrays.asList(x.split(" ")).iterator(), Encoders.STRING());
+        ds_input2.registerTempTable("t2");
 
-        Dataset<Row> result = ds_sum.groupBy("value").count();
+        Dataset<Row> ds_input3 = spark.sql("select t_1.id as id,t_1.host as host ,t_1.J_0001_00_247 as J_0001_00_247,t_2.id  as id2 from t2 as t_1 INNER JOIN t2 as t_2 on t_1.id > (t_2.id-10) and  t_1.id < (t_2.id+10)");
 
-        if(batch){
-            result.show();
-        }
-        else{
-            StreamingQuery query = result.writeStream()
-                    .outputMode("complete")
-                    .format("console")
-                    .start();
-
-            query.awaitTermination();
-        }
+        ds_input3.show();
+        long end_1 = System.currentTimeMillis();
+        System.out.println("总时间：:"+((end_1-start_time)/1000)+"");
 
 //        String masterUrl = "spark://192.168.10.12:7077";
 //        AtomicInteger val  = new AtomicInteger();
