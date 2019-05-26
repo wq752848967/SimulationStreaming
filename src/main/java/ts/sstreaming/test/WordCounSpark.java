@@ -30,7 +30,7 @@ public class WordCounSpark implements Serializable {
                 .getOrCreate();
 
 
-        Dataset<Row> ds_input = spark.read().csv("hdfs://192.168.10.12:9000/flok/sim_data_small.csv");
+        Dataset<Row> ds_input = spark.read().option("header","true").csv("hdfs://192.168.10.12:9000/flok/sim_data_small.csv");
         long start_time = System.currentTimeMillis();
         ds_input.registerTempTable("t");
 
