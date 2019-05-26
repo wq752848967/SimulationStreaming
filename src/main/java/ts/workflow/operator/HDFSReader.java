@@ -10,7 +10,7 @@ import java.util.HashMap;
 /**
  * Created by wangqi on 2018/9/6.
  */
-public class HDFSReader extends FloKAlgorithm{
+public class HDFSReader extends FloKAlgorithm {
     @Override
     public FloKDataSet run(FloKDataSet inputDataSets, HashMap<String, String> params) {
         boolean header_flag = false;
