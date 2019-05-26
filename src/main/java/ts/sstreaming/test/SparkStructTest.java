@@ -20,7 +20,7 @@ import static org.apache.spark.sql.types.DataTypes.IntegerType;
 import static org.apache.spark.sql.types.DataTypes.StringType;
 
 public class SparkStructTest {
-    private static String jarPath = "file:///Users/wangqi/Downloads/workflow-0.1.0-SNAPSHOT-jar-with-dependencies.jar";
+    //private static String jarPath = "file:///Users/wangqi/Downloads/workflow-0.1.0-SNAPSHOT-jar-with-dependencies.jar";
     public static void main(String[] args)throws StreamingQueryException {
         SparkSession spark = SparkSession
                 .builder()
@@ -34,7 +34,7 @@ public class SparkStructTest {
         DataSourceOp dataSourceOp = new DataSourceOp(spark);
         //ObjectLoaderInter loader = new JarObjectLoaderImpl();
         long start_time = System.currentTimeMillis();
-        Dataset<Row> ds  = dataSourceOp.getStreamDsRow("hdfs://192.168.10.12:9000/flok/sim_data_small.csv",scheme);
+        Dataset<Row> ds  = dataSourceOp.getStreamDsRow("hdfs://192.168.10.12:9000/sim_big_36.csv",scheme);
         FloKAlgorithm flokNode = new SqlExprExecute();
         flokNode.sparkSession = spark;
         FloKDataSet flok_ds = new FloKDataSet();
@@ -43,17 +43,17 @@ public class SparkStructTest {
         param.put("sql_expr","select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t group by id");
         param.put("table_name","t");
         FloKDataSet flok_result_ds = flokNode.run(flok_ds,param);
+//
+//
+//
+//        FloKAlgorithm flokNode2 = new SqlExprExecute();
+//        flokNode2.sparkSession = spark;
 
-
-
-        FloKAlgorithm flokNode2 = new SqlExprExecute();
-        flokNode2.sparkSession = spark;
-
-        HashMap<String,String> param2 = new HashMap<>();
-        param2.put("sql_expr","select t_1.id as id,t_1.host as host ,t_1.J_0001_00_247 as J_0001_00_247,t_2.id  as id2 from t2 as t_1 INNER JOIN t2 as t_2 on t_1.id > (t_2.id-10) and  t_1.id < (t_2.id+10)");
-        param2.put("table_name","t2");
-        FloKDataSet flok_result_ds2 = flokNode2.run(flok_result_ds,param2);
-        StreamingQuery query = flok_result_ds2.get(0).writeStream()
+//        HashMap<String,String> param2 = new HashMap<>();
+//        param2.put("sql_expr","select t_1.id as id,t_1.host as host ,t_1.J_0001_00_247 as J_0001_00_247,t_2.id  as id2 from t2 as t_1 INNER JOIN t2 as t_2 on t_1.id > (t_2.id-10) and  t_1.id < (t_2.id+10)");
+//        param2.put("table_name","t2");
+//        FloKDataSet flok_result_ds2 = flokNode2.run(flok_result_ds,param2);
+        StreamingQuery query = flok_result_ds.get(0).writeStream()
                 .outputMode("complete")
                 .format("console")
                 .start();
