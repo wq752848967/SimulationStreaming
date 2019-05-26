@@ -47,7 +47,7 @@ public class SparkStructTest {
 
 
         FloKAlgorithm flokNode2 = new SqlExprExecute();
-        flokNode.sparkSession = spark;
+        flokNode2.sparkSession = spark;
 
         HashMap<String,String> param2 = new HashMap<>();
         param2.put("sql_expr","select t_1.id as id,t_1.host as host ,t_1.J_0001_00_247 as J_0001_00_247,t_2.id  as id2 from t2 as t_1 INNER JOIN t2 as t_2 on t_1.id > (t_2.id-10) and  t_1.id < (t_2.id+10)");
