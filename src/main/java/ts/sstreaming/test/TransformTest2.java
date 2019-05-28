@@ -84,6 +84,7 @@ public class TransformTest2 {
         if(args[0].length()>1){
             batch = false;
         }
+        String mode = args[0];
         System.out.println("*******:"+args[0]+" "+batch);
         Dataset<Row> ds_input = null;
         StructType scheme = new StructType().add("id",IntegerType)
@@ -128,7 +129,7 @@ public class TransformTest2 {
         }
         else{
             StreamingQuery query = result.writeStream()
-                    .outputMode("complete")
+                    .outputMode(mode)
                     .format("console")
                     .start();
 
