@@ -81,10 +81,10 @@ public class TransformTest2 {
 
         DataSourceOp dsource = new DataSourceOp(spark);
         boolean batch = true;
-        if(args[0].trim()=="1"){
+        if(args[0].length()>1){
             batch = false;
         }
-
+        System.out.println("*******:"+args[0]+" "+batch);
         Dataset<Row> ds_input = null;
         StructType scheme = new StructType().add("id",IntegerType)
                 .add("align_time",StringType)
