@@ -112,8 +112,8 @@ public class TransformTest2 {
             @Override
             public Tuple2<String, Double> call(Row row) throws Exception {
                 int id = Integer.parseInt(row.getAs("id").toString());
-                String key = (id%2)==0?"1":"0";
-                return new Tuple2<>(key,Double.parseDouble(" "+row.getAs("J_0001_00_247")));
+                //String key = (id%2)==0?"1":"0";
+                return new Tuple2<>(id+"",Double.parseDouble(" "+row.getAs("J_0001_00_247")));
             }
         },Encoders.tuple(Encoders.STRING(), Encoders.DOUBLE()));
 
