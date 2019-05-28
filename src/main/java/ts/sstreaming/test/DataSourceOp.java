@@ -5,6 +5,7 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.types.StructType;
 import scala.Function1;
 
 public class DataSourceOp {
@@ -22,5 +23,14 @@ public class DataSourceOp {
     }
     public Dataset<String> getStreamDs(String path){
         return session.readStream().textFile(path);
+    }
+    public Dataset<Row> getBatchDsRow(String path){
+
+        Dataset<Row> ds =   session.read().text(path);
+        return ds;
+
+    }
+    public Dataset<Row> getStreamDsRow(String path, StructType struct){
+        return session.readStream().schema(struct).csv(path);
     }
 }
