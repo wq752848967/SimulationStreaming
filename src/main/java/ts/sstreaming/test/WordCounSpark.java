@@ -39,7 +39,7 @@ public class WordCounSpark implements Serializable {
 
         ds_input2.registerTempTable("t2");
 
-        Dataset<Row> ds_input3 = spark.sql("select max(unq_id) unq_id id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t2 group by J_0001_00_247");
+        Dataset<Row> ds_input3 = spark.sql("select max(unq_id) unq_id , max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t2 group by J_0001_00_247");
 
         ds_input3.show();
         long end_1 = System.currentTimeMillis();
