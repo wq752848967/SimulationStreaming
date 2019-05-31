@@ -47,14 +47,14 @@ public class SparkStructTest {
 
 
 
-        FloKAlgorithm flokNode2 = new SqlExprExecute();
-        flokNode2.sparkSession = spark;
-
-        HashMap<String,String> param2 = new HashMap<>();
-        param2.put("sql_expr","select max(unq_id) as unq_id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t2 group by J_0001_00_247");
-        param2.put("table_name","t2");
-        FloKDataSet flok_result_ds2 = flokNode2.run(flok_result_ds,param2);
-        StreamingQuery query = flok_result_ds2.get(0).writeStream()
+//        FloKAlgorithm flokNode2 = new SqlExprExecute();
+//        flokNode2.sparkSession = spark;
+//
+//        HashMap<String,String> param2 = new HashMap<>();
+//        param2.put("sql_expr","select max(unq_id) as unq_id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t2 group by J_0001_00_247");
+//        param2.put("table_name","t2");
+//        FloKDataSet flok_result_ds2 = flokNode2.run(flok_result_ds,param2);
+        StreamingQuery query = flok_result_ds.get(0).writeStream()
                 .outputMode("complete")
                 .format("console")
                 .start();
