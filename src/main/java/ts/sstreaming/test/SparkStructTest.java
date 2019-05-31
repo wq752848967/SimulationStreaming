@@ -28,6 +28,7 @@ public class SparkStructTest {
                 .appName("JavaStructuredNetworkWordCount")
                 .getOrCreate();
         StructType scheme = new StructType().add("unq_id",IntegerType)
+                .add("id",IntegerType)
                 .add("align_time",StringType)
                 .add("host",StringType)
                 .add("J_0001_00_247",StringType);
