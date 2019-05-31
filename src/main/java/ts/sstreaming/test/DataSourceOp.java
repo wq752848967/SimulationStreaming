@@ -26,11 +26,11 @@ public class DataSourceOp {
     }
     public Dataset<Row> getBatchDsRow(String path){
 
-        Dataset<Row> ds =   session.read().text(path);
+        Dataset<Row> ds =   session.read().option("header","true").csv(path);
         return ds;
 
     }
     public Dataset<Row> getStreamDsRow(String path, StructType struct){
-        return session.readStream().schema(struct).csv(path);
+        return session.readStream().option("header","true").schema(struct).csv(path);
     }
 }
