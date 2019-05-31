@@ -25,21 +25,21 @@ public class WordCounSpark implements Serializable {
     public static void main(String[] args) throws StreamingQueryException {
         SparkSession spark = SparkSession
                 .builder()
-                .master("spark://192.168.10.12:7077")
-                .appName("JavaStructuredNetworkWordCount")
+                .master("spark://172.16.244.8:7077")
+                .appName("JavaWordCount")
                 .getOrCreate();
 
 
-        Dataset<Row> ds_input = spark.read().option("header","true").csv("hdfs://192.168.10.12:9000/sim_big_36.csv");
+        Dataset<Row> ds_input = spark.read().option("header","true").csv("hdfs://172.16.244.5:9000/flok/sim/sim_id_12g.csv");
         long start_time = System.currentTimeMillis();
         ds_input.registerTempTable("t");
 
-        Dataset<Row> ds_input2 = spark.sql("select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t group by id");
+        Dataset<Row> ds_input2 = spark.sql("select max(unq_id) as unq_id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t group by unq_id");
 
 
         ds_input2.registerTempTable("t2");
 
-        Dataset<Row> ds_input3 = spark.sql("select max(id) as id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t2 group by J_0001_00_247");
+        Dataset<Row> ds_input3 = spark.sql("select max(unq_id) unq_id id, max(host) as host,max(J_0001_00_247) as J_0001_00_247 from t2 group by J_0001_00_247");
 
         ds_input3.show();
         long end_1 = System.currentTimeMillis();
