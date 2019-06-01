@@ -58,6 +58,7 @@ public class SparkStructTest {
         StreamingQuery query = sql_dd.writeStream()
                 .outputMode("complete")
                 .format("console")
+                .option("maxFilesPerTrigger","100")
                 .start();
         long end_1 = System.currentTimeMillis();
         System.out.println("总时间1：:"+((end_1-start_time)/1000)+"");
