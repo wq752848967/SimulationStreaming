@@ -6,6 +6,7 @@ import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 
 public class Iso_JavaOp {
+    String delimiter = "|";
     private static String masterUrl = "local[5]";
     //"/Users/wangqi/Desktop/FloK/sim/ios/left_data.csv";//
     private static String left_input = "hdfs://192.168.35.55:9000/flok/4665/DWFReadMySQL-1530083324_475428cc-5f2c-4291-915b-e5c3759b9405_0.output";
@@ -16,8 +17,8 @@ public class Iso_JavaOp {
     }
     public void run(){
         SparkSession session = SparkSession.builder().master(masterUrl).getOrCreate();
-        Dataset<Row> ds_left = session.read().option("header","true").option("delimiter",",").csv(left_input);
-        Dataset<Row> ds_right = session.read().option("header","true").option("delimiter",",").csv(right_input);
+        Dataset<Row> ds_left = session.read().option("header","true").option("delimiter",delimiter).csv(left_input);
+        Dataset<Row> ds_right = session.read().option("header","true").option("delimiter",delimiter).csv(right_input);
         Row[] rs_left = (Row[])ds_left.collect();
         Row[] rs_right =(Row[]) ds_right.collect();
         for(Row r:rs_left){

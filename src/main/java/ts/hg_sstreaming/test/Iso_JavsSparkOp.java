@@ -6,6 +6,7 @@ import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 
 public class Iso_JavsSparkOp {
+    String delimiter = "|";
     private  SparkSession session =  null;
     private static String masterUrl = "local[5]";
     //"/Users/wangqi/Desktop/FloK/sim/ios/left_data.csv";//
@@ -25,8 +26,8 @@ public class Iso_JavsSparkOp {
 
 
         //read data
-        Dataset<Row> ds_left = session.read().option("header","true").option("delimiter",",").csv(left_input);
-        Dataset<Row> ds_right = session.read().option("header","true").option("delimiter",",").csv(right_input);
+        Dataset<Row> ds_left = session.read().option("header","true").option("delimiter",delimiter).csv(left_input);
+        Dataset<Row> ds_right = session.read().option("header","true").option("delimiter",delimiter).csv(right_input);
         ds_left.registerTempTable("table_left");
         ds_right.registerTempTable("table_right");
 //        ds_right.col("timestamp").cast("float");
