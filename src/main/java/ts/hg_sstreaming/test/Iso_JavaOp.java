@@ -7,8 +7,10 @@ import org.apache.spark.sql.SparkSession;
 
 public class Iso_JavaOp {
     private static String masterUrl = "local[5]";
-    private static String left_input = "/Users/wangqi/Desktop/FloK/sim/ios/left_data.csv";
-    private static String right_input = "/Users/wangqi/Desktop/FloK/sim/ios/right_data.csv";
+    //"/Users/wangqi/Desktop/FloK/sim/ios/left_data.csv";//
+    private static String left_input = "hdfs://192.168.35.55:9000/flok/4665/DWFReadMySQL-1530083324_475428cc-5f2c-4291-915b-e5c3759b9405_0.output";
+    //private static String right_input = "/Users/wangqi/Desktop/FloK/sim/ios/right_data.csv";
+    private static String right_input = "hdfs://192.168.35.55:9000/flok/4665/csv_loader-1530083012_dafde4f6-9eda-404a-87df-c2fc51bf0dab_0.output";
     public static void main(String[] args) {
 
     }
