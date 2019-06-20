@@ -6,9 +6,11 @@ import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 
 public class SparkOp {
+
+    private final String RUN_ENV =  "test";
     private Dataset<Row> ds_right = null;
     private SparkSession session =  null;
-    private String delimiter = "|";
+    private String delimiter = ",";
     private String path = null;
     public SparkOp(String path,SparkSession session){
         this.session = session;
@@ -31,18 +33,21 @@ public class SparkOp {
 
 
         // add something cal op
-        session.sql("select * from table_left where device_id!=128080").registerTempTable("filter_left");
-        session.sql("select *,FROM_UNIXTIME(timestamp/1000+2678400,'yyyy-MM-dd HH:mm:ss.s') as new_timestamp from table_right").registerTempTable("filter_right");
-        session.sql("select * from filter_left").show();
-        session.sql("select * from filter_right,filter_left where  filter_left.period_start>=filter_right.new_timestamp and filter_left.period_end<=filter_right.new_timestamp").show();
+        if(RUN_ENV.equals("product")){
+            session.sql("select * from table_left where device_id!=128080").registerTempTable("filter_left");
+            session.sql("select *,FROM_UNIXTIME(timestamp/1000+2678400,'yyyy-MM-dd HH:mm:ss.s') as new_timestamp from table_right").registerTempTable("filter_right");
+            session.sql("select * from filter_left").show();
+            session.sql("select * from filter_right,filter_left where  filter_left.period_start>=filter_right.new_timestamp and filter_left.period_end<=filter_right.new_timestamp").show();
+        }
 
 
 
 
         //result
         Dataset<Row> result_ds = session.sql("select * from table_left where device_id=128080");
-        result_ds.write().mode(SaveMode.Overwrite).option("header","true").csv("outputPath");
-
+        System.out.println("before write");
+        result_ds.write().mode(SaveMode.Overwrite).option("header","true").csv(outputPath);
+        System.out.println("in Spark op: in"+inputPath+"  out:"+outputPath);
         return outputPath;
     }
 }
