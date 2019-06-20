@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession;
 
 public class SparkOp {
 
-    private final String RUN_ENV =  "test";
+    private final String RUN_ENV =  "product";
     private Dataset<Row> ds_right = null;
     private SparkSession session =  null;
     private String delimiter = ",";
@@ -18,15 +18,16 @@ public class SparkOp {
 
     }
     public void init(){
-        ds_right = session.read().option("header","true").option("delimiter",delimiter).csv(path);
+        ds_right = session.read().option("header","true").option("delimiter",",").csv(path);
     }
     public String run(String inputPath,String outputPath){
 
 
 
         //read data
+        System.out.println("before spark :"+inputPath+" "+outputPath);
         Dataset<Row> ds_left = session.read().option("header","true").option("delimiter",delimiter).csv(inputPath);
-
+        //ds_left.show();
         ds_left.registerTempTable("table_left");
         ds_right.registerTempTable("table_right");
 //        ds_right.col("timestamp").cast("float");

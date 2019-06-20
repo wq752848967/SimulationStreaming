@@ -7,16 +7,19 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class Iso_SDriver {
-    private static String masterUrl = "local[1]";
-//    private final static String JAVA_OUT_PATH = "hdfs://192.168.35.55:9000/flok/sim/java_out/";
-//    private final static String SPARK_OUT_PATH = "hdfs://192.168.35.55:9000/flok/sim/spark_out/";
-//    private final static String PYHTON_OUT_PATH = "hdfs://192.168.35.55:9000/flok/sim/python_out/";
-    private final static String JAVA_OUT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/java_out/";
-    private final static String SPARK_OUT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/spark_out/";
-    private final static String PYHTON_OUT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/python_out/";
-    //private final static String RIGHT_PATH = "hdfs://192.168.35.55:9000/flok/4665/csv_loader-1530083012_dafde4f6-9eda-404a-87df-c2fc51bf0dab_0.output";
-    private final static String RIGHT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/right_data.csv";
-    private final static String RIGHT_PYTHON_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/right_data.csv";
+    //private static String masterUrl = "local[1]";
+    private static String masterUrl = "spark://192.168.35.55:7077";
+    private final static String JAVA_OUT_PATH = "hdfs://192.168.35.55:9000/flok/sim/java_out/";
+    private final static String SPARK_OUT_PATH = "hdfs://192.168.35.55:9000/flok/sim/spark_out/";
+    private final static String PYHTON_OUT_PATH = "hdfs://192.168.35.55:9000/flok/sim/python_out/";
+//    private final static String JAVA_OUT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/java_out/";
+//    private final static String SPARK_OUT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/spark_out/";
+//    private final static String PYHTON_OUT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/python_out/";
+    private final static String RIGHT_PATH = "hdfs://192.168.35.55:9000/flok/4665/csv_loader-1530083012_dafde4f6-9eda-404a-87df-c2fc51bf0dab_0.output";
+    //private final static String RIGHT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/right_data.csv";
+    //private final static String RIGHT_PYTHON_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/right_data.csv";
+    private final static String RIGHT_PYTHON_PATH = "/tmp/sim/right_data.csv";
+    ///home/flok/data/sim/right_data.csv
     public static void main(String[] args) {
         /**
          * 初始化数据
@@ -57,7 +60,7 @@ public class Iso_SDriver {
         pythonConsumerThread.start();
 
         //填充数据
-        javaOp.getInQueue().offer("/Users/wangqi/Desktop/FloK/sim/ios/left_data.csv");
+        javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/4665/DWFReadMySQL-1530083324_475428cc-5f2c-4291-915b-e5c3759b9405_0.output");
         //javaOp.getInQueue().offer("/Users/wangqi/Desktop/FloK/sim/ios/left_data.csv");
         int input_split_count = 1;
         try {

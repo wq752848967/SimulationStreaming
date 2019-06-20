@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class PythonUtils {
     private int status  = 0;
-    private String PYTHON_OP = "/Users/wangqi/Documents/code/python_wp/f1/python_test.py";
+    private String PYTHON_OP = "/home/flok/data/sim/tianyuan_feature_extraction.py";
     public int getStatus() {
         return status;
     }
