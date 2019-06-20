@@ -18,7 +18,7 @@ public class SparkOp {
 
     }
     public void init(){
-        ds_right = session.read().option("header","true").option("delimiter",",").csv(path);
+        ds_right = session.read().option("header","true").option("delimiter","|").csv(path);
     }
     public String run(String inputPath,String outputPath){
 
