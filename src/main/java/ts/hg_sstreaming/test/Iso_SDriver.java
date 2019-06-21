@@ -18,7 +18,7 @@ public class Iso_SDriver {
     private final static String RIGHT_PATH = "hdfs://192.168.35.55:9000/flok/4665/csv_loader-1530083012_dafde4f6-9eda-404a-87df-c2fc51bf0dab_0.output";
     //private final static String RIGHT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/right_data.csv";
     //private final static String RIGHT_PYTHON_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/right_data.csv";
-    private final static String RIGHT_PYTHON_PATH = "/tmp/sim/right_data.csv";
+    private final static String RIGHT_PYTHON_PATH = "hdfs://192.168.35.55:9000/flok/sim/right_data_1.csv";
     ///home/flok/data/sim/right_data.csv
     public static void main(String[] args) {
         /**
@@ -34,7 +34,7 @@ public class Iso_SDriver {
         //初始化计算算子
         Iso_SJavaOp javaOp = new Iso_SJavaOp(session_java,JAVA_OUT_PATH,RIGHT_PATH,logs);
         Iso_SSparkOp sparkOp = new Iso_SSparkOp(session_spark,SPARK_OUT_PATH,RIGHT_PATH,logs);
-        Iso_SPython pythonOp = new Iso_SPython(PYHTON_OUT_PATH,RIGHT_PATH,logs);
+        Iso_SPython pythonOp = new Iso_SPython(PYHTON_OUT_PATH,RIGHT_PYTHON_PATH,logs);
 
         //构建算子流程关系
         javaOp.setOutQueue(sparkOp.getInQueue());

@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession;
 
 public class SparkOp {
 
-    private final String RUN_ENV =  "product";
+    private final String RUN_ENV =  "test";
     private Dataset<Row> ds_right = null;
     private SparkSession session =  null;
     private String delimiter = ",";

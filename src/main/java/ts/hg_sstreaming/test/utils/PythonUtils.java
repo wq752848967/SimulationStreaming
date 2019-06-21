@@ -4,7 +4,8 @@ import java.io.IOException;
 
 public class PythonUtils {
     private int status  = 0;
-    private String PYTHON_OP = "/home/flok/data/sim/tianyuan_feature_extraction.py";
+    //private String PYTHON_OP = "/home/flok/data/sim/tianyuan_feature_extraction.py";
+    private String PYTHON_OP = "/Users/wangqi/Documents/code/tianyuan_feature_extraction.py";
     public int getStatus() {
         return status;
     }
@@ -22,8 +23,10 @@ public class PythonUtils {
         status = 1;
 
        try {
+           String commond = "python "+ PYTHON_OP+" "+input+" "+right+" "+out;
+           System.out.println("commond:"+commond);
            proc = Runtime.getRuntime().exec("python " + PYTHON_OP+" "+input+" "+right+" "+out);
-           //proc.waitFor();
+           proc.waitFor();
            System.out.println("afer running:"+proc.waitFor()+out);
        }catch (InterruptedException e){
            e.printStackTrace();
