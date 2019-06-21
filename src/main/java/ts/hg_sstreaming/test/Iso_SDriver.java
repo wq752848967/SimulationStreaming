@@ -15,7 +15,7 @@ public class Iso_SDriver {
 //    private final static String JAVA_OUT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/java_out/";
 //    private final static String SPARK_OUT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/spark_out/";
 //    private final static String PYHTON_OUT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/python_out/";
-    private final static String RIGHT_PATH = "hdfs://192.168.35.55:9000/flok/4665/csv_loader-1530083012_dafde4f6-9eda-404a-87df-c2fc51bf0dab_0.output";
+    private final static String RIGHT_PATH = "p";
     //private final static String RIGHT_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/right_data.csv";
     //private final static String RIGHT_PYTHON_PATH = "/Users/wangqi/Desktop/FloK/sim/ios/right_data.csv";
     private final static String RIGHT_PYTHON_PATH = "hdfs://192.168.35.55:9000/flok/sim/right_data_1.csv";
@@ -60,10 +60,11 @@ public class Iso_SDriver {
         pythonConsumerThread.start();
 
         //填充数据
-        javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/sim/sp2/left_1.csv");
-        javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/sim/sp2/left_2.csv");
+        javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/sim/sp2/left_31.csv");
+        javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/sim/sp2/left_32.csv");
+        javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/sim/sp2/left_33.csv");
         //javaOp.getInQueue().offer("/Users/wangqi/Desktop/FloK/sim/ios/left_data.csv");
-        int input_split_count = 2;
+        int input_split_count = 3;
         try {
            while(pythonOp.getFile_index()<input_split_count){
                 Thread.sleep(2000);
