@@ -34,7 +34,7 @@ public class Iso_SDriver {
         //初始化计算算子
         Iso_SJavaOp javaOp = new Iso_SJavaOp(session_java,JAVA_OUT_PATH,RIGHT_PATH,logs);
         Iso_SSparkOp sparkOp = new Iso_SSparkOp(session_spark,SPARK_OUT_PATH,RIGHT_PATH,logs);
-        Iso_SPython pythonOp = new Iso_SPython(PYHTON_OUT_PATH,RIGHT_PYTHON_PATH,logs);
+        Iso_SPython pythonOp = new Iso_SPython(PYHTON_OUT_PATH,RIGHT_PATH,logs);
 
         //构建算子流程关系
         javaOp.setOutQueue(sparkOp.getInQueue());
