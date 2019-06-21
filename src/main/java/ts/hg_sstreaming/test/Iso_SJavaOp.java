@@ -57,7 +57,7 @@ public class Iso_SJavaOp implements Runnable{
                 logs.add("JAVA start:"+ TimeUtils.tranTime(start_time)+"  input:"+dataPath);
                 outQueue.offer(java_op.run(dataPath,outputPath+file_index+".csv"));
                 long end_time = System.currentTimeMillis();
-                logs.add("JAVA end:"+ TimeUtils.tranTime(start_time)+"  cost:"+(end_time-start_time)/1000);
+                logs.add("JAVA end:"+ TimeUtils.tranTime(end_time)+"  cost:"+(end_time-start_time)/1000);
                 file_index++;
             }
 

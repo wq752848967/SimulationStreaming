@@ -48,7 +48,7 @@ public class Iso_SPython implements Runnable {
                 logs.add("Python start:"+ TimeUtils.tranTime(start_time)+"  input:"+dataPath);
                 pythonOp.run(dataPath,python_right_path,outputPath+file_index+".csv");
                 long end_time = System.currentTimeMillis();
-                logs.add("Python end:"+ TimeUtils.tranTime(start_time)+"  cost:"+(end_time-start_time)/1000);
+                logs.add("Python end:"+ TimeUtils.tranTime(end_time)+"  cost:"+(end_time-start_time)/1000);
 
                 file_index++;
 

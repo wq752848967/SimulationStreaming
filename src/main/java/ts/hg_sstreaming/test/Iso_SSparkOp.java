@@ -53,7 +53,7 @@ public class Iso_SSparkOp  implements Runnable{
                 logs.add("Spark start:"+ TimeUtils.tranTime(start_time)+"  input:"+dataPath);
                 String result = spark_op.run(dataPath,outputPath+file_index+".csv");
                 long end_time = System.currentTimeMillis();
-                logs.add("Spark end:"+ TimeUtils.tranTime(start_time)+"  cost:"+(end_time-start_time)/1000);
+                logs.add("Spark end:"+ TimeUtils.tranTime(end_time)+"  cost:"+(end_time-start_time)/1000);
                 file_index++;
                 if(outQueue!=null){
                     outQueue.offer(result);
