@@ -63,7 +63,7 @@ public class Iso_SDriver {
         javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/sim/sp2/left_1.csv");
         javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/sim/sp2/left_2.csv");
         //javaOp.getInQueue().offer("/Users/wangqi/Desktop/FloK/sim/ios/left_data.csv");
-        int input_split_count = 1;
+        int input_split_count = 2;
         try {
            while(pythonOp.getFile_index()<input_split_count){
                 Thread.sleep(2000);
