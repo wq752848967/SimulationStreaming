@@ -60,7 +60,8 @@ public class Iso_SDriver {
         pythonConsumerThread.start();
 
         //填充数据
-        javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/4665/DWFReadMySQL-1530083324_475428cc-5f2c-4291-915b-e5c3759b9405_0.output");
+        javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/sim/sp2/left_1.csv");
+        javaOp.getInQueue().offer("hdfs://192.168.35.55:9000/flok/sim/sp2/left_2.csv");
         //javaOp.getInQueue().offer("/Users/wangqi/Desktop/FloK/sim/ios/left_data.csv");
         int input_split_count = 1;
         try {

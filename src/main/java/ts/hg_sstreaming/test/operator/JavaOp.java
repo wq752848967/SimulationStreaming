@@ -20,7 +20,7 @@ public class JavaOp {
     public void init (){
         Dataset<Row> ds_right = session.read().option("header","true").option("delimiter","|").csv(path);
         rs_right =(Row[]) ds_right.collect();
-        ds_right.show();
+        //ds_right.show();
     }
 
     public String run(String inputPath,String outputPath){
