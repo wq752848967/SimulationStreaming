@@ -5,9 +5,6 @@ import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
 import ts.hg_sstreaming.test.utils.TimeUtils;
-
-import javax.mail.Session;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
