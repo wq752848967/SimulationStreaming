@@ -17,12 +17,14 @@ public class JavaDetialTest {
     private static String RUN_ENV = "product";
     private static String delimiter = "|";
     private static String path = "|";
+    private static int index = 0;
+    private static ArrayList<String> logs = new ArrayList<>();
     public static void main(String[] args) {
-        ArrayList<String> logs = new ArrayList<>();
+
         long start = System.currentTimeMillis();
         session = SparkSession.builder().master("local[2]").getOrCreate();
         path = "hdfs://192.168.35.55:9000/flok/4665/csv_loader-1530083012_dafde4f6-9eda-404a-87df-c2fc51bf0dab_0.output";
-        int index = 0;
+
 
         init();
         List<String> path_arr  = new ArrayList<String>();
@@ -58,10 +60,12 @@ public class JavaDetialTest {
     }
 
     public static String run(String inputPath,String outputPath){
-
+        long read_s = System.currentTimeMillis();
         Dataset<Row> ds_left = session.read().option("header","true").option("delimiter",delimiter).csv(inputPath);
         //ds_left.show();
         Row[] rs_left = (Row[])ds_left.collect();
+        long read_e = System.currentTimeMillis();
+
 
 
         if(RUN_ENV.equals("product")){
@@ -79,9 +83,14 @@ public class JavaDetialTest {
                 }
             }
         }
-
+        long cal_e = System.currentTimeMillis();
         ds_left.write().mode(SaveMode.Overwrite).option("header","true").csv(outputPath);
         System.out.println("in JAVA op: "+inputPath+"  out:"+outputPath);
+        long write_e = System.currentTimeMillis();
+        logs.add(index+" read cost:"+((read_e-read_s)/1000)+" start:"+TimeUtils.tranTime(read_s)+"   end:"+TimeUtils.tranTime(read_e));
+        logs.add(index+" cal cost:"+((cal_e-read_e)/1000)+" start:"+TimeUtils.tranTime(read_e)+"   end:"+TimeUtils.tranTime(cal_e));
+        logs.add(index+" write cost:"+((write_e-cal_e)/1000)+" start:"+TimeUtils.tranTime(cal_e)+"   end:"+TimeUtils.tranTime(write_e));
+
         return outputPath;
     }
 }
