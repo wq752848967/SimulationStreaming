@@ -4,6 +4,7 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.SparkSession;
+import ts.hg_sstreaming.test.utils.TimeUtils;
 
 import javax.mail.Session;
 import java.lang.reflect.Array;
@@ -17,6 +18,7 @@ public class JavaDetialTest {
     private static String delimiter = "|";
     private static String path = "|";
     public static void main(String[] args) {
+        ArrayList<String> logs = new ArrayList<>();
         long start = System.currentTimeMillis();
         session = SparkSession.builder().master("local[2]").getOrCreate();
         path = "hdfs://192.168.35.55:9000/flok/4665/csv_loader-1530083012_dafde4f6-9eda-404a-87df-c2fc51bf0dab_0.output";
@@ -35,11 +37,17 @@ public class JavaDetialTest {
 
 
         for(String p:path_arr){
+            long s = System.currentTimeMillis();
             run(p,"hdfs://192.168.35.55:9000/flok/sim/detial/data"+index+".csv");
+            long e = System.currentTimeMillis();
+            logs.add("file "+index+" start:"+ TimeUtils.tranTime(s)+"  end:"+TimeUtils.tranTime(e)+"  cost:"+(e-s)/1000);
             index++;
         }
         long end = System.currentTimeMillis();
         System.out.println(index+" total:"+(end-start)/1000);
+        for (String s:logs){
+            System.out.println(s);
+        }
 
     }
     public static void init (){
