@@ -25,16 +25,18 @@ public class JavaDetialTest {
         session = SparkSession.builder().master("local[2]").getOrCreate();
         path = "hdfs://192.168.35.55:9000/flok/4665/csv_loader-1530083012_dafde4f6-9eda-404a-87df-c2fc51bf0dab_0.output";
 
-
         init();
         List<String> path_arr  = new ArrayList<String>();
         if(args[0].equals("one")){
             path_arr.add("hdfs://192.168.35.55:9000/flok/4665/DWFReadMySQL-1530083324_475428cc-5f2c-4291-915b-e5c3759b9405_0.output");
         }
         else{
-            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp3/1.csv");
-            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp3/2.csv");
-            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp3/3.csv");
+            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/1.csv");
+            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/2.csv");
+            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/3.csv");
+            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/4.csv");
+            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/5.csv");
+            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/6.csv");
         }
 
 
@@ -87,9 +89,9 @@ public class JavaDetialTest {
         ds_left.write().mode(SaveMode.Overwrite).option("header","true").csv(outputPath);
         System.out.println("in JAVA op: "+inputPath+"  out:"+outputPath);
         long write_e = System.currentTimeMillis();
-        logs.add(index+" read cost:"+((read_e-read_s)/1000)+" start:"+TimeUtils.tranTime(read_s)+"   end:"+TimeUtils.tranTime(read_e));
+        logs.add(index+" read cost:"+((read_e-read_s)/100)+" start:"+TimeUtils.tranTime(read_s)+"   end:"+TimeUtils.tranTime(read_e));
         logs.add(index+" cal cost:"+((cal_e-read_e)/1000)+" start:"+TimeUtils.tranTime(read_e)+"   end:"+TimeUtils.tranTime(cal_e));
-        logs.add(index+" write cost:"+((write_e-cal_e)/1000)+" start:"+TimeUtils.tranTime(cal_e)+"   end:"+TimeUtils.tranTime(write_e));
+        logs.add(index+" write cost:"+((write_e-cal_e)/100)+" start:"+TimeUtils.tranTime(cal_e)+"   end:"+TimeUtils.tranTime(write_e));
 
         return outputPath;
     }
