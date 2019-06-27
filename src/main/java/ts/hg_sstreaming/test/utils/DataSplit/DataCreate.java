@@ -15,7 +15,7 @@ public class DataCreate {
             //ds
             ds = ds.union(ds);
         }
-        ds.repartition(1);
+        ds = ds.repartition(1);
         ds.write().mode(SaveMode.Overwrite).option("header","true").option("delimiter",",").csv(args[1]);
 
     }

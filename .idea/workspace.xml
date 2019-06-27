@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="921087d2-07c2-45c4-9d7f-a34ef7f0bc7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ts/hg_sstreaming/test/utils/DataSplit/DataCreate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ts/hg_sstreaming/test/utils/DataSplit/ReadWriteTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ts/hg_sstreaming/test/utils/DataSplit/DataCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ts/hg_sstreaming/test/utils/DataSplit/DataCreate.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,14 +39,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="8708" />
+          <entry key="java" value="8715" />
           <entry key="sh" value="10" />
           <entry key="txt" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8708" />
+          <entry key="JAVA" value="8715" />
           <entry key="PLAIN_TEXT" value="39" />
         </counts>
       </usages-collector>
@@ -160,8 +159,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ts/hg_sstreaming/test/utils/DataSplit/DataCreate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="92" selection-start-line="9" selection-start-column="92" selection-end-line="9" selection-end-column="92" />
+            <state relative-caret-position="306">
+              <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -752,7 +751,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561557553666</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="异构流式平台 commit">
+      <created>1561604103462</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1561604103462</updated>
+    </task>
+    <task id="LOCAL-00041" summary="异构流式平台 commit">
+      <created>1561604914858</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1561604914858</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -1178,8 +1191,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ts/hg_sstreaming/test/utils/DataSplit/DataCreate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="92" selection-start-line="9" selection-start-column="92" selection-end-line="9" selection-end-column="92" />
+        <state relative-caret-position="306">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
