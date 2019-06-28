@@ -11,9 +11,10 @@ public class DataCreate {
         Dataset<Row> ds = session_java.read().option("header","true").option("delimiter",",").csv("hdfs://172.16.244.5:9000/flok/sim/sim_test_small.csv");
 //        ds.show();
         int count =Integer.parseInt(args[0]);
+        Dataset<Row> result = ds;
         for(int i=1;i<count;i++){
             //ds
-            ds = ds.union(ds);
+            result = result.union(ds);
         }
         ds = ds.repartition(1);
         ds.write().mode(SaveMode.Overwrite).option("header","true").option("delimiter",",").csv(args[1]);

@@ -28,12 +28,10 @@ public class JavaDetialTest {
             path_arr.add("hdfs://192.168.35.55:9000/flok/4665/DWFReadMySQL-1530083324_475428cc-5f2c-4291-915b-e5c3759b9405_0.output");
         }
         else{
-            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/1.csv");
-            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/2.csv");
-            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/3.csv");
-            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/4.csv");
-            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/5.csv");
-            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp6/6.csv");
+            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp4/1.csv");
+            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp4/2.csv");
+            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp4/3.csv");
+            path_arr.add("hdfs://192.168.35.55:9000/flok/sim/sp4/4.csv");
         }
 
 
